@@ -31,7 +31,7 @@ class User(AbstractUser):
         verbose_name='Роль пользователя'
     )
     bio = models.TextField(
-        max_length=450
+        max_length=450,
         blank=True,
         verbose_name='Биография'
     ) 
