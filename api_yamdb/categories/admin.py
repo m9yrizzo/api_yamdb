@@ -1,14 +1,12 @@
 from django.contrib import admin
 
-from categories.models import Category, Genre, Title, TitleGenre
+from categories.models import Genre, Category, Title, TitleGenre
 
 
-@admin.register(Genre)
 class GenreInline(admin.TabularInline):
     model = TitleGenre
 
 
-@admin.register(Title)
 class TitleAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'description', 'category')
     search_fields = ('name',)
@@ -17,4 +15,6 @@ class TitleAdmin(admin.ModelAdmin):
     inlines = (GenreInline,)
 
 
+admin.site.register(Title, TitleAdmin)
+admin.site.register(Genre)
 admin.site.register(Category)

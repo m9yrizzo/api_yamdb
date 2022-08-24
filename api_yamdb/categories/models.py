@@ -20,7 +20,7 @@ class Genre(models.Model):
         return self.name
 
 
-class Category(models.Models):
+class Category(models.Model):
     name = models.CharField(
         max_length=128,
         verbose_name='Категория'
