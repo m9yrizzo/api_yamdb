@@ -3,6 +3,22 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.routers import DefaultRouter
 from categories.views import CategoryViewSet, GenreViewSet, TitleViewSet
 from .views import get_confirmation_code
+from .views import (
+    CommentViewSet, ReviewViewSet
+)
+
+router_v1 = DefaultRouter()
+router_v1.register(
+    r'titles/(?P<title_id>\d+)/reviews',
+    ReviewViewSet,
+    basename='reviews'
+)
+router_v1.register(
+    r'titles/(?P<title_id>\d+)/reviews/(?P<review_id>\d+)/comments',
+    CommentViewSet,
+    basename='comments'
+)
+
 
 router_v1 = DefaultRouter()
 router_v1.register(r'genres', GenreViewSet, basename='genres')
