@@ -23,11 +23,7 @@ from .serializers import (
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
-def get_confirmation_code(self,request):
-#def post(self, request):
-#    http_method_names = ['post', ]
-#    permission_classes = (permissions.AllowAny,)
-
+def get_confirmation_code(request):
     serializer = ConfirmationCodeSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.save()
