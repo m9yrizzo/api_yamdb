@@ -12,6 +12,16 @@ class ConfirmationCodeSerializer(serializers.ModelSerializer):
 
 
 class JWTTokenSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(required=True)
+    confirmation_code = serializers.CharField(required=True)
+    class Meta:
+        fields = (
+            'username', 'confirmation_code',
+        )
+        model = User
+
+
+class UsersSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             'username', 'bio', 'email', 'role', 'first_name', 'last_name',
