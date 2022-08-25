@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'categories.apps.CategoriesConfig',
     'api.apps.ApiConfig',
+    'rest_framework',
     'api_yamdb',
     'django_filters',
 ]
