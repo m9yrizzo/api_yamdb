@@ -1,8 +1,11 @@
 import os
+from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
+# env_path = Path('.') / '.env'
+# load_dotenv(dotenv_path=env_path)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -19,11 +22,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'categories.apps.CategoriesConfig',
     'rest_framework',
     'users',
     'api',
     'reviews',
-
+    'django_filters',
+#    'api.apps.ApiConfig',
+#    'api_yamdb',
 ]
 
 MIDDLEWARE = [
