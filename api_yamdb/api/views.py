@@ -4,12 +4,13 @@ from django.core.mail import send_mail
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import status, permissions
 
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from reviews.models import Review
 from .serializers import ConfirmationCodeSerializer
@@ -21,7 +22,12 @@ from .serializers import (
 
 
 @api_view(['POST'])
-def get_confirmation_code(request):
+@permission_classes([AllowAny])
+def get_confirmation_code(self,request):
+#def post(self, request):
+#    http_method_names = ['post', ]
+#    permission_classes = (permissions.AllowAny,)
+
     serializer = ConfirmationCodeSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.save()

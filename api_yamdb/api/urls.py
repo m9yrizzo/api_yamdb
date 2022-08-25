@@ -7,6 +7,8 @@ from .views import (
     CommentViewSet, ReviewViewSet
 )
 
+app_name = 'api'
+
 router_v1 = DefaultRouter()
 router_v1.register(
     r'titles/(?P<title_id>\d+)/reviews',
@@ -27,7 +29,7 @@ router_v1.register(r'titles', TitleViewSet, basename='titles')
 
 
 urlpatterns = [
-    path('v1/auth/signup', get_confirmation_code, name='signup'),
+    path('v1/auth/signup', get_confirmation_code),
 #    path('v1/auth/token', get_jwt_token.as_view())
     path('v1/', include(router_v1.urls)),
 ]
