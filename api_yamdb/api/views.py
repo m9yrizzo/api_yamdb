@@ -36,15 +36,28 @@ from users.models import User
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def get_confirmation_code(request):
-    serializer = ConfirmationCodeSerializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-    user = serializer.save()
-    email = serializer.validated_data['email']
-    confirmation_code = default_token_generator.make_token(user)
-    send_mail(
-        'Регистрация', f'Код подтверждения: {confirmation_code}',
-        'admin@yambd', [email], fail_silently=False, )
-    return Response(serializer.validated_data, status=status.HTTP_200_OK)
+    email = request.data.get('email')
+    username = request.data.get('username')
+    print(email)
+    print(username)
+    is_registered = User.objects.filter(
+            email=email, username=username)
+    print(is_registered.exists())
+    if not is_registered.exists():        
+        serializer = ConfirmationCodeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        email = serializer.validated_data['email']
+        confirmation_code = default_token_generator.make_token(user)
+        send_mail(
+            'Регистрация', f'Код подтверждения: {confirmation_code}',
+            'admin@yambd', [email], fail_silently=False, )
+        return Response(serializer.validated_data, status=status.HTTP_200_OK)
+    else:
+        response = {
+            'error': 'Пользователь уже зарегистрирован в системе!'
+        }
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
