@@ -5,10 +5,14 @@ from django.db import models
 # id,username,email,role,bio,first_name,last_name
 class User(AbstractUser):
 
+    user = 'Зарегистрированный пользователь'
+    moderator = 'Модератор'
+    admin = 'Администратор'
+
     ROLES = (
-        ('user','Зарегистрированный пользователь'),
-        ('moderator','Модератор'),
-        ('admin','Администратор'),
+        (user, user),
+        (moderator, moderator),
+        (admin, admin),
     )
 
     username = models.CharField(
@@ -45,3 +49,21 @@ class User(AbstractUser):
         blank=True,
         verbose_name='Фамилия' 
     )
+
+    @property
+    def is_user(self):
+        return self.role == self.user
+
+
+    @property
+    def is_moderator(self):
+        return self.role == self.moderator
+
+
+    @property
+    def is_admin(self):
+        return self.role == self.admin or self.is_superuser
+
+
+    def __str__(self):
+        return self.username

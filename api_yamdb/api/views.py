@@ -26,6 +26,12 @@ from .serializers import (
     ReviewSerializer,
     CommentSerializer,
 )
+from .permissions import (
+    IsAuthorOrReadOnlyPermission,
+    IsAdmin,
+    IsModerator,
+    ReadOnlyAccess,
+)
 from users.models import User
 
 @api_view(['POST'])
@@ -66,6 +72,7 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_url_kwarg = 'username'
     lookup_field = 'username'
     search_fields = ('username', 'role',)
+    permission_classes = (IsAdmin,)
   
     def get_object(self):
         if self.kwargs['username'] == 'me':
