@@ -21,7 +21,6 @@ from .serializers import (
     JWTTokenSerializer,
     UsersSerializer,
 )
-from .permissions import IsAuthorModerAdminOrReadOnly
 from .serializers import (
     ReviewSerializer,
     CommentSerializer,
@@ -30,7 +29,7 @@ from .permissions import (
     IsAuthorOrReadOnlyPermission,
     IsAdmin,
     IsModerator,
-    ReadOnlyAccess,
+    ReadOnlyPermission,
 )
 from users.models import User
 
@@ -72,7 +71,7 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_url_kwarg = 'username'
     lookup_field = 'username'
     search_fields = ('username', 'role',)
-    permission_classes = (IsAdmin,)
+    permission_classes = (IsAdmin, )
   
     def get_object(self):
         if self.kwargs['username'] == 'me':
@@ -90,7 +89,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-#    permission_classes = [IsAuthorModerAdminOrReadOnly, ]
+    permission_classes = [ IsAdmin , IsModerator , IsAuthorOrReadOnlyPermission,]
     pagination_class = LimitOffsetPagination
 
     def perform_create(self, serializer):

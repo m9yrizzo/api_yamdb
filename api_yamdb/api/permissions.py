@@ -41,7 +41,7 @@ class IsModerator(permissions.BasePermission):
         )
 
 
-class ReadOnlyAccess(permissions.BasePermission):
+class ReadOnlyPermission(permissions.BasePermission):
 
     def has_permission(self, request, view):
         return bool(request.method in permissions.SAFE_METHODS)
