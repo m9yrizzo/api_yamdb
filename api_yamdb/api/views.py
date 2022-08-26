@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import status, permissions
 
 from django.shortcuts import get_object_or_404
@@ -71,7 +71,7 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_url_kwarg = 'username'
     lookup_field = 'username'
     search_fields = ('username', 'role',)
-    permission_classes = (IsAdmin, )
+    permission_classes = (IsAdmin, IsAuthenticated)
   
     def get_object(self):
         if self.kwargs['username'] == 'me':

@@ -1,0 +1,1337 @@
+============================= test session starts =============================
+platform win32 -- Python 3.8.10, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\scripts\python.exe
+django: settings: api_yamdb.settings (from ini)
+rootdir: C:\Users\vladislav.kovalev\Downloads\Dev\api_yamdb, configfile: pytest.ini, testpaths: tests/
+plugins: django-4.4.0, pythonpath-0.7.3
+collecting ... collected 53 items
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup PASSED [  1%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup FAILED [  3%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup PASSED [  5%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user FAILED [  7%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data PASSED [  9%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted FAILED [ 11%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_same_email_restricted PASSED [ 13%]
+tests/test_01_users.py::Test01UserAPI::test_01_users_not_authenticated PASSED [ 15%]
+tests/test_01_users.py::Test01UserAPI::test_02_users_username_not_authenticated PASSED [ 16%]
+tests/test_01_users.py::Test01UserAPI::test_03_users_me_not_authenticated PASSED [ 18%]
+tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin FAILED    [ 20%]
+tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search FAILED [ 22%]
+tests/test_01_users.py::Test01UserAPI::test_04_01_users_get_admin_only PASSED [ 24%]
+tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin FAILED [ 26%]
+tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser FAILED [ 28%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin FAILED [ 30%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_not_admin PASSED [ 32%]
+tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin FAILED [ 33%]
+tests/test_01_users.py::Test01UserAPI::test_07_02_users_username_patch_moderator PASSED [ 35%]
+tests/test_01_users.py::Test01UserAPI::test_07_03_users_username_patch_user PASSED [ 37%]
+tests/test_01_users.py::Test01UserAPI::test_07_05_users_username_put_user_restricted PASSED [ 39%]
+tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin FAILED [ 41%]
+tests/test_01_users.py::Test01UserAPI::test_08_02_users_username_delete_moderator PASSED [ 43%]
+tests/test_01_users.py::Test01UserAPI::test_08_03_users_username_delete_user PASSED [ 45%]
+tests/test_01_users.py::Test01UserAPI::test_08_04_users_username_delete_superuser PASSED [ 47%]
+tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions FAILED [ 49%]
+tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin FAILED [ 50%]
+tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin FAILED [ 52%]
+tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user FAILED [ 54%]
+tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth PASSED [ 56%]
+tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin FAILED [ 58%]
+tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin FAILED [ 60%]
+tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin FAILED [ 62%]
+tests/test_02_category.py::Test02CategoryAPI::test_05_category_create_user PASSED [ 64%]
+tests/test_02_category.py::Test02CategoryAPI::test_06_category_create_moderator PASSED [ 66%]
+tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth PASSED    [ 67%]
+tests/test_03_genre.py::Test03GenreAPI::test_02_genre FAILED             [ 69%]
+tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete FAILED     [ 71%]
+tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission FAILED [ 73%]
+tests/test_03_genre.py::Test03GenreAPI::test_05_genre_create_user PASSED [ 75%]
+tests/test_03_genre.py::Test03GenreAPI::test_06_genre_create_moderator PASSED [ 77%]
+tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth FAILED    [ 79%]
+tests/test_04_title.py::Test04TitleAPI::test_02_title_admin FAILED       [ 81%]
+tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail FAILED     [ 83%]
+tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission FAILED [ 84%]
+tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth FAILED [ 86%]
+tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin FAILED    [ 88%]
+tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail FAILED   [ 90%]
+tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission FAILED [ 92%]
+tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth FAILED [ 94%]
+tests/test_06_comment.py::Test06CommentAPI::test_02_comment FAILED       [ 96%]
+tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail FAILED [ 98%]
+tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission FAILED [100%]
+
+================================== FAILURES ===================================
+_____________ Test00UserRegistration.test_00_invalid_data_signup ______________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x054EA2C8>
+client = <django.test.client.Client object at 0x055ABD90>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_invalid_data_signup(self, client):
+        invalid_email = 'invalid_email'
+        invalid_username = 'invalid_username@yamdb.fake'
+    
+        invalid_data = {
+            'email': invalid_email,
+            'username': invalid_username
+        }
+        request_type = 'POST'
+        response = client.post(self.url_signup, data=invalid_data)
+    
+        assert response.status_code != 404, (
+            f'Страница `{self.url_signup}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+        code = 400
+        assert response.status_code == code, (
+            f'Проверьте, что при {request_type} запросе `{self.url_signup}` с невалидными данными '
+            f'не создается пользователь и возвращается статус {code}'
+        )
+    
+        response_json = response.json()
+        invalid_fields = ['email']
+        for field in invalid_fields:
+>           assert (field in response_json.keys()
+                    and isinstance(response_json[field], list)), (
+                f'Проверьте, что при {request_type} запросе `{self.url_signup}` с невалидными параметрами, '
+                f'в ответе есть сообщение о том, какие поля заполенены неправильно'
+            )
+E           AssertionError: Проверьте, что при POST запросе `/api/v1/auth/signup/` с невалидными параметрами, в ответе есть сообщение о том, какие поля заполенены неправильно
+E           assert ('email' in dict_keys(['username']))
+E            +  where dict_keys(['username']) = <built-in method keys of dict object at 0x054E8BB8>()
+E            +    where <built-in method keys of dict object at 0x054E8BB8> = {'username': ['Убедитесь, что это значение содержит не более 25 символов.']}.keys
+
+tests\test_00_user_registration.py:59: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Bad Request: /api/v1/auth/signup/
+_________ Test00UserRegistration.test_00_valid_data_admin_create_user _________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x0553B0A0>
+admin_client = <rest_framework.test.APIClient object at 0x054B2790>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_valid_data_admin_create_user(self, admin_client):
+    
+        valid_email = 'valid@yamdb.fake'
+        valid_username = 'valid_username'
+        outbox_before_count = len(mail.outbox)
+    
+        valid_data = {
+            'email': valid_email,
+            'username': valid_username
+        }
+        request_type = 'POST'
+        response = admin_client.post(self.url_admin_create_user, data=valid_data)
+        outbox_after = mail.outbox
+    
+        assert response.status_code != 404, (
+            f'Страница `{self.url_admin_create_user}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+    
+        code = 201
+>       assert response.status_code == code, (
+            f'Проверьте, что при {request_type} запросе `{self.url_admin_create_user}` с валидными данными '
+            f'от имени администратора, создается пользователь и возвращается статус {code}'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` с валидными данными от имени администратора, создается пользователь и возвращается статус 201
+E       assert 403 == 201
+E         +403
+E         -201
+
+tests\test_00_user_registration.py:142: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+_____ Test00UserRegistration.test_00_registration_me_username_restricted ______
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x054C76B8>
+client = <django.test.client.Client object at 0x055564D8>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_registration_me_username_restricted(self, client):
+        valid_email = 'valid@yamdb.fake'
+        invalid_username = 'me'
+        request_type = 'POST'
+    
+        valid_data = {
+            'email': valid_email,
+            'username': invalid_username
+        }
+        response = client.post(self.url_signup, data=valid_data)
+        code = 400
+>       assert response.status_code == code, (
+            f'Проверьте, что при {request_type} запросе `{self.url_signup}` '
+            f'нельзя создать пользователя с username = "me" и возвращается статус {code}'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/auth/signup/` нельзя создать пользователя с username = "me" и возвращается статус 400
+E       assert 200 == 400
+E         +200
+E         -400
+
+tests\test_00_user_registration.py:239: AssertionError
+____________________ Test01UserAPI.test_04_users_get_admin ____________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x059C6DF0>
+admin_client = <rest_framework.test.APIClient object at 0x059B4EF8>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_users_get_admin(self, admin_client, admin):
+        response = admin_client.get('/api/v1/users/')
+        assert response.status_code != 404, (
+            'Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+>       assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/users/` с токеном авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/` с токеном авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
+
+tests\test_01_users.py:51: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+__________________ Test01UserAPI.test_04_02_users_get_search __________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x059D0718>
+admin_client = <rest_framework.test.APIClient object at 0x0545FA78>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_02_users_get_search(self, admin_client, admin):
+        url = '/api/v1/users/'
+        search_url = f'{url}?search={admin.username}'
+        response = admin_client.get(search_url)
+        assert response.status_code != 404, (
+            'Страница `/api/v1/users/?search={username}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+        reponse_json = response.json()
+>       assert 'results' in reponse_json and isinstance(reponse_json.get('results'), list), (
+            'Проверьте, что при GET запросе `/api/v1/users/?search={username}` '
+            'результаты возвращаются под ключом `results` и в виде списка.'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/?search={username}` результаты возвращаются под ключом `results` и в виде списка.
+E       assert ('results' in {'detail': 'У вас недостаточно прав для выполнения данного действия.'})
+
+tests\test_01_users.py:97: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+__________________ Test01UserAPI.test_05_01_users_post_admin __________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x054BCC28>
+admin_client = <rest_framework.test.APIClient object at 0x05533898>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_01_users_post_admin(self, admin_client, admin):
+        empty_data = {}
+        response = admin_client.post('/api/v1/users/', data=empty_data)
+>       assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400
+E       assert 403 == 400
+E         +403
+E         -400
+
+tests\test_01_users.py:135: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+_____________ Test01UserAPI.test_05_02_users_post_user_superuser ______________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x059D0118>
+user_superuser_client = <rest_framework.test.APIClient object at 0x059D49E8>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_02_users_post_user_superuser(self, user_superuser_client):
+        users = get_user_model().objects.all()
+        users_before = users.count()
+        valid_data = {
+            'username': 'TestUser_3',
+            'role': 'user',
+            'email': 'testuser3@yamdb.fake'
+        }
+        response = user_superuser_client.post('/api/v1/users/', data=valid_data)
+>       assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, '
+            'с правильными данными, возвращаете статус 201.'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, с правильными данными, возвращаете статус 201.
+E       assert 400 == 201
+E         +400
+E         -201
+
+tests\test_01_users.py:260: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
+_______________ Test01UserAPI.test_06_users_username_get_admin ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0551C400>
+admin_client = <rest_framework.test.APIClient object at 0x05A56730>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_06_users_username_get_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+_____________ Test01UserAPI.test_07_01_users_username_patch_admin _____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x05A46040>
+admin_client = <rest_framework.test.APIClient object at 0x05A46298>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_07_01_users_username_patch_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:326: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+____________ Test01UserAPI.test_08_01_users_username_delete_admin _____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x05A054D8>
+admin_client = <rest_framework.test.APIClient object at 0x059F7C70>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_08_01_users_username_delete_admin(self, admin_client):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:398: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+________________ Test01UserAPI.test_09_users_check_permissions ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0554DD90>
+admin_client = <rest_framework.test.APIClient object at 0x0599DF70>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_09_users_check_permissions(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:488: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+__________________ Test01UserAPI.test_10_users_me_get_admin ___________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x05A1B130>
+admin_client = <rest_framework.test.APIClient object at 0x05C87028>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_10_users_me_get_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:494: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+________________ Test01UserAPI.test_11_01_users_me_patch_admin ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x057299A0>
+admin_client = <rest_framework.test.APIClient object at 0x05A0A238>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_11_01_users_me_patch_admin(self, admin_client):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:528: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+________________ Test01UserAPI.test_11_02_users_me_patch_user _________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x05484970>
+user_client = <rest_framework.test.APIClient object at 0x059D4C70>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_11_02_users_me_patch_user(self, user_client):
+        data = {
+            'first_name': 'New user first name',
+            'last_name': 'New user last name',
+            'bio': 'new user bio',
+        }
+        response = user_client.patch('/api/v1/users/me/', data=data)
+>       assert response.status_code == 200, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/me/`, '
+            'пользователь с ролью user может изменить свои данные, и возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при PATCH запросе `/api/v1/users/me/`, пользователь с ролью user может изменить свои данные, и возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
+
+tests\test_01_users.py:560: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/me/
+__________________ Test02CategoryAPI.test_02_category_admin ___________________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x0599D910>
+admin_client = <rest_framework.test.APIClient object at 0x05A58940>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_category_admin(self, admin_client):
+        data = {}
+        response = admin_client.post('/api/v1/categories/', data=data)
+>       assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` с не правильными данными возвращает статус 400'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/categories/` с не правильными данными возвращает статус 400
+E       assert 403 == 400
+E         +403
+E         -400
+
+tests\test_02_category.py:22: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+_______________ Test02CategoryAPI.test_03_category_delete_admin _______________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x05543328>
+admin_client = <rest_framework.test.APIClient object at 0x055568E0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_category_delete_admin(self, admin_client):
+        create_categories(admin_client)
+        response = admin_client.delete('/api/v1/categories/books/')
+>       assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204
+E       assert 403 == 204
+E         +403
+E         -204
+
+tests\test_02_category.py:96: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/books/
+__________ Test02CategoryAPI.test_04_category_check_permission_admin __________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x05556418>
+client = <django.test.client.Client object at 0x05562088>
+admin_client = <rest_framework.test.APIClient object at 0x05A56370>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_category_check_permission_admin(self, client, admin_client):
+        categories = create_categories(admin_client)
+        data = {
+            'name': 'Музыка',
+            'slug': 'music'
+        }
+        response = client.post('/api/v1/categories/', data=data)
+        assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` '
+            'без токена авторизации возвращается статус 401'
+        )
+        response = client.delete(f'/api/v1/categories/{categories[0]["slug"]}/')
+        assert response.status_code == 401, (
+            'Проверьте, что при DELETE запросе `/api/v1/categories/{{slug}}/` '
+            'без токена авторизации возвращается статус 401'
+        )
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_02_category.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Unauthorized: /api/v1/categories/
+WARNING  django.request:log.py:222 Unauthorized: /api/v1/categories/films/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+________________________ Test03GenreAPI.test_02_genre _________________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x0598CD60>
+admin_client = <rest_framework.test.APIClient object at 0x05512160>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_genre(self, admin_client):
+        data = {}
+        response = admin_client.post('/api/v1/genres/', data=data)
+>       assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` с не правильными данными возвращает статус 400'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/genres/` с не правильными данными возвращает статус 400
+E       assert 403 == 400
+E         +403
+E         -400
+
+tests\test_03_genre.py:22: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+____________________ Test03GenreAPI.test_03_genres_delete _____________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x05450EC8>
+admin_client = <rest_framework.test.APIClient object at 0x05533700>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_genres_delete(self, admin_client):
+        genres = create_genre(admin_client)
+        response = admin_client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
+>       assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204
+E       assert 403 == 204
+E         +403
+E         -204
+
+tests\test_03_genre.py:87: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/horror/
+_______________ Test03GenreAPI.test_04_genres_check_permission ________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x054D32C8>
+client = <django.test.client.Client object at 0x05BF4B50>
+admin_client = <rest_framework.test.APIClient object at 0x05BF4E20>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_genres_check_permission(self, client, admin_client):
+        genres = create_genre(admin_client)
+        data = {
+            'name': 'Боевик',
+            'slug': 'action'
+        }
+        response = client.post('/api/v1/genres/', data=data)
+        assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` '
+            'без токена авторизации возвращается статус 401'
+        )
+        response = client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
+        assert response.status_code == 401, (
+            'Проверьте, что при DELETE запросе `/api/v1/genres/{{slug}}/` '
+            'без токена авторизации возвращается статус 401'
+        )
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_03_genre.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+>           raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+                self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Unauthorized: /api/v1/genres/
+WARNING  django.request:log.py:222 Unauthorized: /api/v1/genres/horror/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+____________________ Test04TitleAPI.test_01_title_not_auth ____________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x055295F8>
+client = <django.test.client.Client object at 0x0551CAA8>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_title_not_auth(self, client):
+>       response = client.get('/api/v1/titles/')
+
+tests\test_04_title.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+venv\lib\site-packages\django\test\client.py:535: in get
+    response = super().get(path, data=data, secure=secure, **extra)
+venv\lib\site-packages\django\test\client.py:345: in get
+    return self.generic('GET', path, secure=secure, **{
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:38: in list
+    queryset = self.filter_queryset(self.get_queryset())
+api_yamdb\categories\views.py:57: in get_queryset
+    return Title.objects.annotate(rating=Avg('reviews__score')).order_by(
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+venv\lib\site-packages\django\db\models\query.py:1056: in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+venv\lib\site-packages\django\db\models\sql\query.py:999: in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None,
+venv\lib\site-packages\django\db\models\aggregates.py:47: in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+venv\lib\site-packages\django\db\models\expressions.py:603: in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+venv\lib\site-packages\django\db\models\expressions.py:514: in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+venv\lib\site-packages\django\db\models\sql\query.py:1601: in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+venv\lib\site-packages\django\db\models\sql\query.py:1503: in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <django.db.models.sql.query.Query object at 0x0545F370>
+names = ['reviews'], opts = <Options for Title>, allow_many = True
+fail_on_missing = True
+
+    def names_to_path(self, names, opts, allow_many=True, fail_on_missing=False):
+        """
+        Walk the list of names and turns them into PathInfo tuples. A single
+        name in 'names' can generate multiple PathInfos (m2m, for example).
+    
+        'names' is the path of names to travel, 'opts' is the model Options we
+        start the name resolving from, 'allow_many' is as for setup_joins().
+        If fail_on_missing is set to True, then a name that can't be resolved
+        will generate a FieldError.
+    
+        Return a list of PathInfo tuples. In addition return the final field
+        (the last used join field) and target (which is a field guaranteed to
+        contain the same value as the final field). Finally, return those names
+        that weren't found (which are likely transforms and the final lookup).
+        """
+        path, names_with_path = [], []
+        for pos, name in enumerate(names):
+            cur_names_with_path = (name, [])
+            if name == 'pk':
+                name = opts.pk.name
+    
+            field = None
+            filtered_relation = None
+            try:
+                field = opts.get_field(name)
+            except FieldDoesNotExist:
+                if name in self.annotation_select:
+                    field = self.annotation_select[name].output_field
+                elif name in self._filtered_relations and pos == 0:
+                    filtered_relation = self._filtered_relations[name]
+                    field = opts.get_field(filtered_relation.relation_name)
+            if field is not None:
+                # Fields that contain one-to-many relations with a generic
+                # model (like a GenericForeignKey) cannot generate reverse
+                # relations and therefore cannot be used for reverse querying.
+                if field.is_relation and not field.related_model:
+                    raise FieldError(
+                        "Field %r does not generate an automatic reverse "
+                        "relation and therefore cannot be used for reverse "
+                        "querying. If it is a GenericForeignKey, consider "
+                        "adding a GenericRelation." % name
+                    )
+                try:
+                    model = field.model._meta.concrete_model
+                except AttributeError:
+                    # QuerySet.annotate() may introduce fields that aren't
+                    # attached to a model.
+                    model = None
+            else:
+                # We didn't find the current field, so move position back
+                # one step.
+                pos -= 1
+                if pos == -1 or fail_on_missing:
+                    available = sorted([
+                        *get_field_names_from_opts(opts),
+                        *self.annotation_select,
+                        *self._filtered_relations,
+                    ])
+>                   raise FieldError("Cannot resolve keyword '%s' into field. "
+                                     "Choices are: %s" % (name, ", ".join(available)))
+E                   django.core.exceptions.FieldError: Cannot resolve keyword 'reviews' into field. Choices are: category, category_id, description, genre, id, name, titlegenre, year
+
+venv\lib\site-packages\django\db\models\sql\query.py:1419: FieldError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\vladislav.kovalev\Downloads\Dev\api_yamdb\api_yamdb\categories\views.py", line 57, in get_queryset
+    return Title.objects.annotate(rating=Avg('reviews__score')).order_by(
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\query.py", line 1056, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\sql\query.py", line 999, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None,
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\expressions.py", line 603, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\expressions.py", line 514, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\sql\query.py", line 1601, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\sql\query.py", line 1503, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\db\models\sql\query.py", line 1419, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'reviews' into field. Choices are: category, category_id, description, genre, id, name, titlegenre, year
+_____________________ Test04TitleAPI.test_02_title_admin ______________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x05B46028>
+admin_client = <rest_framework.test.APIClient object at 0x05B70178>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_title_admin(self, admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        data = {}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400
+E       assert 403 == 400
+E         +403
+E         -400
+
+tests\test_04_title.py:25: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+____________________ Test04TitleAPI.test_03_titles_detail _____________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x055AB760>
+client = <django.test.client.Client object at 0x05A05268>
+admin_client = <rest_framework.test.APIClient object at 0x054BCAD8>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_titles_detail(self, client, admin_client):
+>       titles, categories, genres = create_titles(admin_client)
+
+tests\test_04_title.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x054BCAD8>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+_______________ Test04TitleAPI.test_04_titles_check_permission ________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x05B46910>
+client = <django.test.client.Client object at 0x05556790>
+admin_client = <rest_framework.test.APIClient object at 0x05A17B68>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_titles_check_permission(self, client, admin_client):
+>       titles, categories, genres = create_titles(admin_client)
+
+tests\test_04_title.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05A17B68>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+___________________ Test05ReviewAPI.test_01_review_not_auth ___________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05B70568>
+client = <django.test.client.Client object at 0x05504C40>
+admin_client = <rest_framework.test.APIClient object at 0x05EA4328>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_review_not_auth(self, client, admin_client):
+>       titles, _, _ = create_titles(admin_client)
+
+tests\test_05_review.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05EA4328>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+____________________ Test05ReviewAPI.test_02_review_admin _____________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05AA5F10>
+admin_client = <rest_framework.test.APIClient object at 0x05A94EE0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_review_admin(self, admin_client, admin):
+>       titles, _, _ = create_titles(admin_client)
+
+tests\test_05_review.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05A94EE0>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+____________________ Test05ReviewAPI.test_03_review_detail ____________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05AD58C8>
+client = <django.test.client.Client object at 0x059B6AF0>
+admin_client = <rest_framework.test.APIClient object at 0x059B69E8>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_05_review.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x059B69E8>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+______________ Test05ReviewAPI.test_04_reviews_check_permission _______________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05ADA2C8>
+client = <django.test.client.Client object at 0x05ADA8C8>
+admin_client = <rest_framework.test.APIClient object at 0x0545F388>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_reviews_check_permission(self, client, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_05_review.py:319: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x0545F388>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+__________________ Test06CommentAPI.test_01_comment_not_auth __________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x0545F928>
+client = <django.test.client.Client object at 0x059A1BE0>
+admin_client = <rest_framework.test.APIClient object at 0x059A1358>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_comment_not_auth(self, client, admin_client, admin):
+>       reviews, titles, _, _ = create_reviews(admin_client, admin)
+
+tests\test_06_comment.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x059A1358>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+______________________ Test06CommentAPI.test_02_comment _______________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x054D31D8>
+admin_client = <rest_framework.test.APIClient object at 0x05AAE6E8>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_comment(self, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_06_comment.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05AAE6E8>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+___________________ Test06CommentAPI.test_03_review_detail ____________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05BF48E0>
+client = <django.test.client.Client object at 0x05BF49A0>
+admin_client = <rest_framework.test.APIClient object at 0x05A27040>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+>       comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+
+tests\test_06_comment.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:105: in create_comments
+    reviews, titles, user, moderator = create_reviews(admin_client, admin)
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05A27040>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+______________ Test06CommentAPI.test_04_comment_check_permission ______________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05AC8B20>
+client = <django.test.client.Client object at 0x05AC83A0>
+admin_client = <rest_framework.test.APIClient object at 0x05AC89A0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_comment_check_permission(self, client, admin_client, admin):
+>       comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+
+tests\test_06_comment.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:105: in create_comments
+    reviews, titles, user, moderator = create_reviews(admin_client, admin)
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+admin_client = <rest_framework.test.APIClient object at 0x05AC89A0>
+
+    def create_titles(admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        result = []
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+>       data['id'] = response.json()['id']
+E       KeyError: 'id'
+
+tests\common.py:69: KeyError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+-------------------------- Captured stderr teardown ---------------------------
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+=========================== short test summary info ===========================
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted
+FAILED tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin - Asser...
+FAILED tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search - A...
+FAILED tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin - A...
+FAILED tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser
+FAILED tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions
+FAILED tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin - us...
+FAILED tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_02_genre - AssertionError...
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete - Assert...
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission
+FAILED tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth - djang...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_02_title_admin - Assertio...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail - KeyErr...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth - Ke...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin - KeyEr...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail - KeyE...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_02_comment - KeyError...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail - Ke...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission
+======================= 32 failed, 21 passed in 11.86s ========================

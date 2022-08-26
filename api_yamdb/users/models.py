@@ -5,7 +5,7 @@ from django.db import models
 # id,username,email,role,bio,first_name,last_name
 class User(AbstractUser):
 
-    user = 'Зарегистрированный пользователь'
+    user = 'Пользователь'
     moderator = 'Модератор'
     admin = 'Администратор'
 
