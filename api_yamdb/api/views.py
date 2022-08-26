@@ -15,7 +15,12 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from reviews.models import Review
-from .serializers import ConfirmationCodeSerializer, JWTTokenSerializer
+from .serializers import (
+    ConfirmationCodeSerializer,
+    UsersSerializer,
+    JWTTokenSerializer,
+    UsersSerializer,
+)
 from .permissions import IsAuthorModerAdminOrReadOnly
 from .serializers import (
     ReviewSerializer,
@@ -55,10 +60,30 @@ def get_token(request):
     )
 
 
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UsersSerializer
+    lookup_url_kwarg = 'username'
+    lookup_field = 'username'
+    search_fields = ('username', 'role',)
+  
+    def get_object(self):
+        if self.kwargs['username'] == 'me':
+            obj = self.request.user
+            self.check_object_permissions(self.request, obj)
+            return obj
+        return super().get_object()
+    def destroy(self, request, *args, **kwargs):
+        if self.kwargs['username'] == 'me':
+            return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return super().destroy(request, *args, **kwargs)
+
+
+
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthorModerAdminOrReadOnly, ]
+#    permission_classes = [IsAuthorModerAdminOrReadOnly, ]
     pagination_class = LimitOffsetPagination
 
     def perform_create(self, serializer):
@@ -68,7 +93,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = [IsAuthorModerAdminOrReadOnly, ]
+#    permission_classes = [IsAuthorModerAdminOrReadOnly, ]
 
     def get_review_id(self):
         return get_object_or_404(Review, pk=self.kwargs.get('review_id'))
