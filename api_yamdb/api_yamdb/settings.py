@@ -22,14 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'categories.apps.CategoriesConfig',
     'rest_framework',
     'users',
     'api',
     'reviews',
     'django_filters',
-#    'api.apps.ApiConfig',
-#    'api_yamdb',
+    'categories',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +89,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
+    ],
 }
 
 SIMPLE_JWT = {

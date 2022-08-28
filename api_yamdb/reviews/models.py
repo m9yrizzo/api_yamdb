@@ -1,11 +1,9 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
+from categories.models import Title
+
 User = get_user_model()
-
-
-class Title(models.Model):
-    pass
 
 
 class Review(models.Model):
