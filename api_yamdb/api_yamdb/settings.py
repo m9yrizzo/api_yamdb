@@ -24,11 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
     'rest_framework',
+    'categories.apps.CategoriesConfig',
     'users',
     'api',
     'reviews',
     'django_filters',
-    'categories',
 ]
 
 MIDDLEWARE = [
