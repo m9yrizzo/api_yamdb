@@ -14,6 +14,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from categories.models import Title
 from reviews.models import Review
 from .serializers import (
     ConfirmationCodeSerializer,
@@ -111,14 +112,21 @@ class ReviewViewSet(viewsets.ModelViewSet):
     permission_classes = [ IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,]
     pagination_class = LimitOffsetPagination
 
+    def get_title_id(self):
+        return get_object_or_404(Title, pk=self.kwargs.get('title_id'))
+
+    def get_queryset(self):
+        return self.get_title_id().reviews.all()
+
     def perform_create(self, serializer):
-        # serializer.save(author=self.request.user)
-        pass
+        title = self.get_title_id()
+        serializer.save(author=self.request.user, title_id=title)
 
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
     permission_classes = [IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,]
+    pagination_class = LimitOffsetPagination
 
     def get_review_id(self):
         return get_object_or_404(Review, pk=self.kwargs.get('review_id'))
@@ -128,4 +136,4 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         review = self.get_review_id()
-        serializer.save(author=self.request.user, review=review)
+        serializer.save(author=self.request.user, review_id=review)
