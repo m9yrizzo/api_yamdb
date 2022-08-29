@@ -3,6 +3,8 @@ from datetime import timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
+# env_path = Path('.') / '.env'
+# load_dotenv(dotenv_path=env_path)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,11 +22,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'categories',
-    'reviews',
     'users',
     'api',
-
+    'categories',
+    'reviews',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +88,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    ]
 }
 
 SIMPLE_JWT = {
