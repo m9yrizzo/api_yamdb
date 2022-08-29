@@ -5,9 +5,9 @@ from django.db import models
 # id,username,email,role,bio,first_name,last_name
 class User(AbstractUser):
 
-    user = 'Пользователь'
-    moderator = 'Модератор'
-    admin = 'Администратор'
+    user = 'user'
+    moderator = 'moderator'
+    admin = 'admin'
 
     ROLES = (
         (user, user),
