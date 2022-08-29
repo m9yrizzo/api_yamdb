@@ -55,7 +55,7 @@ def get_confirmation_code(request):
             'admin@yambd', [email], fail_silently=False, )
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
     else:
-        confirmation_code = default_token_generator.make_token(user)
+        confirmation_code = default_token_generator.make_token(username)
         send_mail(
             'Регистрация', f'Код подтверждения: {confirmation_code}',
             'admin@yambd', [email], fail_silently=False, )
