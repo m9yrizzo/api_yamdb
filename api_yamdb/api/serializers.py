@@ -10,7 +10,12 @@ class ConfirmationCodeSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('username', 'email',)
         model = User
-
+    def validate_username(self, value):
+        if value == 'me':
+            raise serializers.ValidationError(
+                'Не разрешается использовать имя пользователя "me".'
+            )
+        return value
 
 class JWTTokenSerializer(serializers.ModelSerializer):
     username = serializers.CharField(required=True)

@@ -8,9 +8,9 @@ collecting ... collected 53 items
 tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup PASSED [  1%]
 tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup FAILED [  3%]
 tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup PASSED [  5%]
-tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user FAILED [  7%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user PASSED [  7%]
 tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data PASSED [  9%]
-tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted FAILED [ 11%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted PASSED [ 11%]
 tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_same_email_restricted PASSED [ 13%]
 tests/test_01_users.py::Test01UserAPI::test_01_users_not_authenticated PASSED [ 15%]
 tests/test_01_users.py::Test01UserAPI::test_02_users_username_not_authenticated PASSED [ 16%]
@@ -19,38 +19,38 @@ tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin FAILED    [ 20%]
 tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search FAILED [ 22%]
 tests/test_01_users.py::Test01UserAPI::test_04_01_users_get_admin_only PASSED [ 24%]
 tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin FAILED [ 26%]
-tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser FAILED [ 28%]
-tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin FAILED [ 30%]
+tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser PASSED [ 28%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin PASSED [ 30%]
 tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_not_admin PASSED [ 32%]
-tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin FAILED [ 33%]
+tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin PASSED [ 33%]
 tests/test_01_users.py::Test01UserAPI::test_07_02_users_username_patch_moderator PASSED [ 35%]
 tests/test_01_users.py::Test01UserAPI::test_07_03_users_username_patch_user PASSED [ 37%]
 tests/test_01_users.py::Test01UserAPI::test_07_05_users_username_put_user_restricted PASSED [ 39%]
-tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin FAILED [ 41%]
+tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin PASSED [ 41%]
 tests/test_01_users.py::Test01UserAPI::test_08_02_users_username_delete_moderator PASSED [ 43%]
 tests/test_01_users.py::Test01UserAPI::test_08_03_users_username_delete_user PASSED [ 45%]
 tests/test_01_users.py::Test01UserAPI::test_08_04_users_username_delete_superuser PASSED [ 47%]
-tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions FAILED [ 49%]
+tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions PASSED [ 49%]
 tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin FAILED [ 50%]
 tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin FAILED [ 52%]
 tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user FAILED [ 54%]
 tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth PASSED [ 56%]
 tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin FAILED [ 58%]
 tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin FAILED [ 60%]
-tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin FAILED [ 62%]
+tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin PASSED [ 62%]
 tests/test_02_category.py::Test02CategoryAPI::test_05_category_create_user PASSED [ 64%]
 tests/test_02_category.py::Test02CategoryAPI::test_06_category_create_moderator PASSED [ 66%]
 tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth PASSED    [ 67%]
 tests/test_03_genre.py::Test03GenreAPI::test_02_genre FAILED             [ 69%]
 tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete FAILED     [ 71%]
-tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission FAILED [ 73%]
+tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission PASSED [ 73%]
 tests/test_03_genre.py::Test03GenreAPI::test_05_genre_create_user PASSED [ 75%]
 tests/test_03_genre.py::Test03GenreAPI::test_06_genre_create_moderator PASSED [ 77%]
 tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth PASSED    [ 79%]
 tests/test_04_title.py::Test04TitleAPI::test_02_title_admin FAILED       [ 81%]
 tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail FAILED     [ 83%]
-tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission FAILED [ 84%]
-tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth FAILED [ 86%]
+tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission PASSED [ 84%]
+tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth PASSED [ 86%]
 tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin FAILED    [ 88%]
 tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail FAILED   [ 90%]
 tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission FAILED [ 92%]
@@ -62,8 +62,8 @@ tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission FAI
 ================================== FAILURES ===================================
 _____________ Test00UserRegistration.test_00_invalid_data_signup ______________
 
-self = <tests.test_00_user_registration.Test00UserRegistration object at 0x04F870B8>
-client = <django.test.client.Client object at 0x05106B20>
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x0541EF10>
+client = <django.test.client.Client object at 0x054E7BF8>
 
     @pytest.mark.django_db(transaction=True)
     def test_00_invalid_data_signup(self, client):
@@ -96,80 +96,16 @@ client = <django.test.client.Client object at 0x05106B20>
             )
 E           AssertionError: Проверьте, что при POST запросе `/api/v1/auth/signup/` с невалидными параметрами, в ответе есть сообщение о том, какие поля заполенены неправильно
 E           assert ('email' in dict_keys(['username']))
-E            +  where dict_keys(['username']) = <built-in method keys of dict object at 0x0510F550>()
-E            +    where <built-in method keys of dict object at 0x0510F550> = {'username': ['Убедитесь, что это значение содержит не более 25 символов.']}.keys
+E            +  where dict_keys(['username']) = <built-in method keys of dict object at 0x0559E348>()
+E            +    where <built-in method keys of dict object at 0x0559E348> = {'username': ['Убедитесь, что это значение содержит не более 25 символов.']}.keys
 
 tests\test_00_user_registration.py:59: AssertionError
 ------------------------------ Captured log call ------------------------------
 WARNING  django.request:log.py:222 Bad Request: /api/v1/auth/signup/
-_________ Test00UserRegistration.test_00_valid_data_admin_create_user _________
-
-self = <tests.test_00_user_registration.Test00UserRegistration object at 0x051A5178>
-admin_client = <rest_framework.test.APIClient object at 0x04F8E3E8>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_00_valid_data_admin_create_user(self, admin_client):
-    
-        valid_email = 'valid@yamdb.fake'
-        valid_username = 'valid_username'
-        outbox_before_count = len(mail.outbox)
-    
-        valid_data = {
-            'email': valid_email,
-            'username': valid_username
-        }
-        request_type = 'POST'
-        response = admin_client.post(self.url_admin_create_user, data=valid_data)
-        outbox_after = mail.outbox
-    
-        assert response.status_code != 404, (
-            f'Страница `{self.url_admin_create_user}` не найдена, проверьте этот адрес в *urls.py*'
-        )
-    
-        code = 201
->       assert response.status_code == code, (
-            f'Проверьте, что при {request_type} запросе `{self.url_admin_create_user}` с валидными данными '
-            f'от имени администратора, создается пользователь и возвращается статус {code}'
-        )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` с валидными данными от имени администратора, создается пользователь и возвращается статус 201
-E       assert 403 == 201
-E         +403
-E         -201
-
-tests\test_00_user_registration.py:142: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
-_____ Test00UserRegistration.test_00_registration_me_username_restricted ______
-
-self = <tests.test_00_user_registration.Test00UserRegistration object at 0x04F41730>
-client = <django.test.client.Client object at 0x04F36748>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_00_registration_me_username_restricted(self, client):
-        valid_email = 'valid@yamdb.fake'
-        invalid_username = 'me'
-        request_type = 'POST'
-    
-        valid_data = {
-            'email': valid_email,
-            'username': invalid_username
-        }
-        response = client.post(self.url_signup, data=valid_data)
-        code = 400
->       assert response.status_code == code, (
-            f'Проверьте, что при {request_type} запросе `{self.url_signup}` '
-            f'нельзя создать пользователя с username = "me" и возвращается статус {code}'
-        )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/auth/signup/` нельзя создать пользователя с username = "me" и возвращается статус 400
-E       assert 200 == 400
-E         +200
-E         -400
-
-tests\test_00_user_registration.py:239: AssertionError
 ____________________ Test01UserAPI.test_04_users_get_admin ____________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x04E83670>
-admin_client = <rest_framework.test.APIClient object at 0x0535A190>
+self = <tests.test_01_users.Test01UserAPI object at 0x05808B80>
+admin_client = <rest_framework.test.APIClient object at 0x05327838>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -178,21 +114,22 @@ admin = <User: TestAdmin>
         assert response.status_code != 404, (
             'Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*'
         )
->       assert response.status_code == 200, (
+        assert response.status_code == 200, (
             'Проверьте, что при GET запросе `/api/v1/users/` с токеном авторизации возвращается статус 200'
         )
-E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/` с токеном авторизации возвращается статус 200
-E       assert 403 == 200
-E         +403
-E         -200
+        data = response.json()
+>       assert 'count' in data, (
+            'Проверьте, что при GET запросе `/api/v1/users/` возвращаете данные с пагинацией. '
+            'Не найден параметр `count`'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/` возвращаете данные с пагинацией. Не найден параметр `count`
+E       assert 'count' in [{'bio': 'admin bio', 'email': 'testadmin@yamdb.fake', 'first_name': '', 'last_name': '', ...}]
 
-tests\test_01_users.py:51: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+tests\test_01_users.py:55: AssertionError
 __________________ Test01UserAPI.test_04_02_users_get_search __________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x05372040>
-admin_client = <rest_framework.test.APIClient object at 0x05372868>
+self = <tests.test_01_users.Test01UserAPI object at 0x05379D30>
+admin_client = <rest_framework.test.APIClient object at 0x05386CB8>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -209,313 +146,212 @@ admin = <User: TestAdmin>
             'результаты возвращаются под ключом `results` и в виде списка.'
         )
 E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/?search={username}` результаты возвращаются под ключом `results` и в виде списка.
-E       assert ('results' in {'detail': 'У вас недостаточно прав для выполнения данного действия.'})
+E       assert ('results' in [{'bio': 'admin bio', 'email': 'testadmin@yamdb.fake', 'first_name': '', 'last_name': '', ...}])
 
 tests\test_01_users.py:97: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
 __________________ Test01UserAPI.test_05_01_users_post_admin __________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x04F195C8>
-admin_client = <rest_framework.test.APIClient object at 0x04EEAE20>
+self = <tests.test_01_users.Test01UserAPI object at 0x05597400>
+admin_client = <rest_framework.test.APIClient object at 0x055971C0>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
     def test_05_01_users_post_admin(self, admin_client, admin):
         empty_data = {}
         response = admin_client.post('/api/v1/users/', data=empty_data)
->       assert response.status_code == 400, (
+        assert response.status_code == 400, (
             'Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400'
         )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400
-E       assert 403 == 400
-E         +403
-E         -400
-
-tests\test_01_users.py:135: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
-_____________ Test01UserAPI.test_05_02_users_post_user_superuser ______________
-
-self = <tests.test_01_users.Test01UserAPI object at 0x051100B8>
-user_superuser_client = <rest_framework.test.APIClient object at 0x054448C8>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_05_02_users_post_user_superuser(self, user_superuser_client):
-        users = get_user_model().objects.all()
-        users_before = users.count()
+        no_email_data = {
+            'username': 'TestUser_noemail',
+            'role': 'user'
+        }
+        response = admin_client.post('/api/v1/users/', data=no_email_data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` без email, возвращаетe статус 400'
+        )
+        valid_email = 'valid_email@yamdb.fake'
+        no_username_data = {
+            'email': valid_email,
+            'role': 'user'
+        }
+        response = admin_client.post('/api/v1/users/', data=no_username_data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` без username, возвращаетe статус 400'
+        )
+        duplicate_email = {
+            'username': 'TestUser_duplicate',
+            'role': 'user',
+            'email': admin.email
+        }
+        response = admin_client.post('/api/v1/users/', data=duplicate_email)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с уже существующим email, возвращаете статус 400. '
+            '`Email` должен быть уникальный у каждого прользователя'
+        )
+        duplicate_username = {
+            'username': admin.username,
+            'role': 'user',
+            'email': valid_email
+        }
+        response = admin_client.post('/api/v1/users/', data=duplicate_username)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с уже существующим email, возвращаете статус 400. '
+            '`Email` должен быть уникальный у каждого прользователя'
+        )
+        data = {
+            'username': admin.username,
+            'role': 'user',
+            'email': 'testuser@yamdb.fake'
+        }
+        response = admin_client.post('/api/v1/users/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с неправильными данными возвращает статус 400. '
+            '`Username` должен быть уникальный у каждого прользователя'
+        )
+        valid_data = {
+            'username': 'TestUser_2',
+            'role': 'user',
+            'email': 'testuser2@yamdb.fake'
+        }
+        response = admin_client.post('/api/v1/users/', data=valid_data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращает 201.'
+        )
         valid_data = {
             'username': 'TestUser_3',
-            'role': 'user',
             'email': 'testuser3@yamdb.fake'
         }
-        response = user_superuser_client.post('/api/v1/users/', data=valid_data)
->       assert response.status_code == 201, (
-            'Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, '
-            'с правильными данными, возвращаете статус 201.'
+        response = admin_client.post('/api/v1/users/', data=valid_data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/users/`, при создании пользователя без указания роли, '
+            'по умолчанию выдается роль user и возвращается статус 201.'
         )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, с правильными данными, возвращаете статус 201.
-E       assert 400 == 201
-E         +400
-E         -201
+        assert response.json().get('role') == 'user', (
+            'Проверьте, что при POST запросе `/api/v1/users/`, при создании пользователя без указания роли, '
+            'по умолчанию выдается роль user и возвращается статус 201.'
+        )
+        data = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'username': 'test_username',
+            'bio': 'test bio',
+            'role': 'moderator',
+            'email': 'testmoder2@yamdb.fake'
+        }
+        response = admin_client.post('/api/v1/users/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращает 201.'
+        )
+        response_data = response.json()
+        assert response_data.get('first_name') == data['first_name'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `first_name`.'
+        )
+        assert response_data.get('last_name') == data['last_name'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `last_name`.'
+        )
+        assert response_data.get('username') == data['username'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `username`.'
+        )
+        assert response_data.get('bio') == data['bio'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `bio`.'
+        )
+        assert response_data.get('role') == data['role'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `role`.'
+        )
+        assert response_data.get('email') == data['email'], (
+            'Проверьте, что при POST запросе `/api/v1/users/` с правильными данными возвращаете `email`.'
+        )
+        User = get_user_model()
+        users = User.objects.all()
+        assert get_user_model().objects.count() == users.count(), (
+            'Проверьте, что при POST запросе `/api/v1/users/` вы создаёте пользователей.'
+        )
+        response = admin_client.get('/api/v1/users/')
+        data = response.json()
+>       assert len(data['results']) == users.count(), (
+            'Проверьте, что при GET запросе `/api/v1/users/` возвращаете данные с пагинацией. '
+            'Значение параметра `results` не правильное'
+        )
+E       TypeError: list indices must be integers or slices, not str
 
-tests\test_01_users.py:260: AssertionError
+tests\test_01_users.py:245: TypeError
 ------------------------------ Captured log call ------------------------------
 WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
-_______________ Test01UserAPI.test_06_users_username_get_admin ________________
-
-self = <tests.test_01_users.Test01UserAPI object at 0x05372508>
-admin_client = <rest_framework.test.APIClient object at 0x04F2D688>
-admin = <User: TestAdmin>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_06_users_username_get_admin(self, admin_client, admin):
->       user, moderator = create_users_api(admin_client)
-
-tests\test_01_users.py:272: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
-_____________ Test01UserAPI.test_07_01_users_username_patch_admin _____________
-
-self = <tests.test_01_users.Test01UserAPI object at 0x053DA190>
-admin_client = <rest_framework.test.APIClient object at 0x053DA220>
-admin = <User: TestAdmin>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_07_01_users_username_patch_admin(self, admin_client, admin):
->       user, moderator = create_users_api(admin_client)
-
-tests\test_01_users.py:326: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
-____________ Test01UserAPI.test_08_01_users_username_delete_admin _____________
-
-self = <tests.test_01_users.Test01UserAPI object at 0x05490760>
-admin_client = <rest_framework.test.APIClient object at 0x05423490>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_08_01_users_username_delete_admin(self, admin_client):
->       user, moderator = create_users_api(admin_client)
-
-tests\test_01_users.py:398: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
-________________ Test01UserAPI.test_09_users_check_permissions ________________
-
-self = <tests.test_01_users.Test01UserAPI object at 0x04F36088>
-admin_client = <rest_framework.test.APIClient object at 0x04E9A550>
-admin = <User: TestAdmin>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_09_users_check_permissions(self, admin_client, admin):
->       user, moderator = create_users_api(admin_client)
-
-tests\test_01_users.py:488: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/users/
 __________________ Test01UserAPI.test_10_users_me_get_admin ___________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x04F2D040>
-admin_client = <rest_framework.test.APIClient object at 0x05423B80>
+self = <tests.test_01_users.Test01UserAPI object at 0x058024A8>
+admin_client = <rest_framework.test.APIClient object at 0x058982C8>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
     def test_10_users_me_get_admin(self, admin_client, admin):
->       user, moderator = create_users_api(admin_client)
+        user, moderator = create_users_api(admin_client)
+        response = admin_client.get('/api/v1/users/me/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/users/me/` от админа, возвращается статус 200'
+        )
+        response_data = response.json()
+        assert response_data.get('username') == admin.username, (
+            'Проверьте, что при GET запросе `/api/v1/users/me/` возвращаете данные пользователя'
+        )
+        client_user = auth_client(moderator)
+        response = client_user.get('/api/v1/users/me/')
+>       assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/users/me/` с токеном авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/users/me/` с токеном авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
 
-tests\test_01_users.py:494: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+tests\test_01_users.py:505: AssertionError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/me/
 ________________ Test01UserAPI.test_11_01_users_me_patch_admin ________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x054715C8>
-admin_client = <rest_framework.test.APIClient object at 0x05471700>
+self = <tests.test_01_users.Test01UserAPI object at 0x05881B50>
+admin_client = <rest_framework.test.APIClient object at 0x0587E850>
 
     @pytest.mark.django_db(transaction=True)
     def test_11_01_users_me_patch_admin(self, admin_client):
->       user, moderator = create_users_api(admin_client)
+        user, moderator = create_users_api(admin_client)
+        data = {
+            'first_name': 'Admin',
+            'last_name': 'Test',
+            'bio': 'description'
+        }
+        response = admin_client.patch('/api/v1/users/me/', data=data)
+        assert response.status_code == 200, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/me/` с токеном авторизации возвращается статус 200'
+        )
+        response_data = response.json()
+        assert response_data.get('bio') == 'description', (
+            'Проверьте, что при PATCH запросе `/api/v1/users/me/` изменяете данные'
+        )
+        client_user = auth_client(moderator)
+        response = client_user.patch('/api/v1/users/me/', data={'first_name': 'NewTest'})
+        test_moderator = get_user_model().objects.get(username=moderator.username)
+>       assert response.status_code == 200, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/me/` с токеном авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при PATCH запросе `/api/v1/users/me/` с токеном авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
 
-tests\test_01_users.py:528: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
+tests\test_01_users.py:545: AssertionError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+WARNING  django.request:log.py:222 Forbidden: /api/v1/users/me/
 ________________ Test01UserAPI.test_11_02_users_me_patch_user _________________
 
-self = <tests.test_01_users.Test01UserAPI object at 0x05490FA0>
-user_client = <rest_framework.test.APIClient object at 0x056259B8>
+self = <tests.test_01_users.Test01UserAPI object at 0x05809910>
+user_client = <rest_framework.test.APIClient object at 0x053428F8>
 
     @pytest.mark.django_db(transaction=True)
     def test_11_02_users_me_patch_user(self, user_client):
@@ -539,216 +375,137 @@ tests\test_01_users.py:560: AssertionError
 WARNING  django.request:log.py:222 Forbidden: /api/v1/users/me/
 __________________ Test02CategoryAPI.test_02_category_admin ___________________
 
-self = <tests.test_02_category.Test02CategoryAPI object at 0x04F11958>
-admin_client = <rest_framework.test.APIClient object at 0x05417A18>
+self = <tests.test_02_category.Test02CategoryAPI object at 0x05883BF8>
+admin_client = <rest_framework.test.APIClient object at 0x058C7628>
 
     @pytest.mark.django_db(transaction=True)
     def test_02_category_admin(self, admin_client):
         data = {}
         response = admin_client.post('/api/v1/categories/', data=data)
->       assert response.status_code == 400, (
+        assert response.status_code == 400, (
             'Проверьте, что при POST запросе `/api/v1/categories/` с не правильными данными возвращает статус 400'
         )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/categories/` с не правильными данными возвращает статус 400
-E       assert 403 == 400
-E         +403
-E         -400
+        data = {
+            'name': 'Фильм',
+            'slug': 'films'
+        }
+        response = admin_client.post('/api/v1/categories/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` с правильными данными возвращает статус 201'
+        )
+        data = {
+            'name': 'Новые фильмы',
+            'slug': 'films'
+        }
+        response = admin_client.post('/api/v1/categories/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` нельзя создать 2 категории с одинаковым `slug`'
+        )
+        data = {
+            'name': 'Книги',
+            'slug': 'books'
+        }
+        response = admin_client.post('/api/v1/categories/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` с правильными данными возвращает статус 201'
+        )
+        response = admin_client.get('/api/v1/categories/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/categories/` возвращает статус 200'
+        )
+        data = response.json()
+>       assert 'count' in data, (
+            'Проверьте, что при GET запросе `/api/v1/categories/` возвращаете данные с пагинацией. '
+            'Не найден параметр `count`'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/categories/` возвращаете данные с пагинацией. Не найден параметр `count`
+E       assert 'count' in [{'name': 'Книги', 'slug': 'books'}, {'name': 'Фильм', 'slug': 'films'}]
 
-tests\test_02_category.py:22: AssertionError
+tests\test_02_category.py:54: AssertionError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/categories/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/categories/
 _______________ Test02CategoryAPI.test_03_category_delete_admin _______________
 
-self = <tests.test_02_category.Test02CategoryAPI object at 0x05451D48>
-admin_client = <rest_framework.test.APIClient object at 0x053F34F0>
+self = <tests.test_02_category.Test02CategoryAPI object at 0x058C7790>
+admin_client = <rest_framework.test.APIClient object at 0x0587E460>
 
     @pytest.mark.django_db(transaction=True)
     def test_03_category_delete_admin(self, admin_client):
         create_categories(admin_client)
         response = admin_client.delete('/api/v1/categories/books/')
->       assert response.status_code == 204, (
+        assert response.status_code == 204, (
             'Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204'
         )
-E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204
-E       assert 403 == 204
-E         +403
-E         -204
+        response = admin_client.get('/api/v1/categories/')
+>       test_data = response.json()['results']
+E       TypeError: list indices must be integers or slices, not str
 
-tests\test_02_category.py:96: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/books/
-__________ Test02CategoryAPI.test_04_category_check_permission_admin __________
-
-self = <tests.test_02_category.Test02CategoryAPI object at 0x04F03B98>
-client = <django.test.client.Client object at 0x054902E0>
-admin_client = <rest_framework.test.APIClient object at 0x05106478>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_04_category_check_permission_admin(self, client, admin_client):
-        categories = create_categories(admin_client)
-        data = {
-            'name': 'Музыка',
-            'slug': 'music'
-        }
-        response = client.post('/api/v1/categories/', data=data)
-        assert response.status_code == 401, (
-            'Проверьте, что при POST запросе `/api/v1/categories/` '
-            'без токена авторизации возвращается статус 401'
-        )
-        response = client.delete(f'/api/v1/categories/{categories[0]["slug"]}/')
-        assert response.status_code == 401, (
-            'Проверьте, что при DELETE запросе `/api/v1/categories/{{slug}}/` '
-            'без токена авторизации возвращается статус 401'
-        )
->       user, moderator = create_users_api(admin_client)
-
-tests\test_02_category.py:150: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Unauthorized: /api/v1/categories/
-WARNING  django.request:log.py:222 Unauthorized: /api/v1/categories/films/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+tests\test_02_category.py:100: TypeError
 ________________________ Test03GenreAPI.test_02_genre _________________________
 
-self = <tests.test_03_genre.Test03GenreAPI object at 0x04EEAB20>
-admin_client = <rest_framework.test.APIClient object at 0x053EEC70>
+self = <tests.test_03_genre.Test03GenreAPI object at 0x05342970>
+admin_client = <rest_framework.test.APIClient object at 0x058E4CD0>
 
     @pytest.mark.django_db(transaction=True)
     def test_02_genre(self, admin_client):
         data = {}
         response = admin_client.post('/api/v1/genres/', data=data)
->       assert response.status_code == 400, (
+        assert response.status_code == 400, (
             'Проверьте, что при POST запросе `/api/v1/genres/` с не правильными данными возвращает статус 400'
         )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/genres/` с не правильными данными возвращает статус 400
-E       assert 403 == 400
-E         +403
-E         -400
+        data = {'name': 'Ужасы', 'slug': 'horror'}
+        response = admin_client.post('/api/v1/genres/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` с правильными данными возвращает статус 201'
+        )
+        data = {'name': 'Триллер', 'slug': 'horror'}
+        response = admin_client.post('/api/v1/genres/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` нельзя создать 2 жанра с одинаковым `slug`'
+        )
+        data = {'name': 'Комедия', 'slug': 'comedy'}
+        response = admin_client.post('/api/v1/genres/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` с правильными данными возвращает статус 201'
+        )
+        response = admin_client.get('/api/v1/genres/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/genres/` возвращает статус 200'
+        )
+        data = response.json()
+>       assert 'count' in data, (
+            'Проверьте, что при GET запросе `/api/v1/genres/` возвращаете данные с пагинацией. '
+            'Не найден параметр `count`'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/genres/` возвращаете данные с пагинацией. Не найден параметр `count`
+E       assert 'count' in [{'name': 'Комедия', 'slug': 'comedy'}, {'name': 'Ужасы', 'slug': 'horror'}]
 
-tests\test_03_genre.py:22: AssertionError
+tests\test_03_genre.py:45: AssertionError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/genres/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/genres/
 ____________________ Test03GenreAPI.test_03_genres_delete _____________________
 
-self = <tests.test_03_genre.Test03GenreAPI object at 0x04E4E790>
-admin_client = <rest_framework.test.APIClient object at 0x05437190>
+self = <tests.test_03_genre.Test03GenreAPI object at 0x05342D18>
+admin_client = <rest_framework.test.APIClient object at 0x058815C8>
 
     @pytest.mark.django_db(transaction=True)
     def test_03_genres_delete(self, admin_client):
         genres = create_genre(admin_client)
         response = admin_client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
->       assert response.status_code == 204, (
+        assert response.status_code == 204, (
             'Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204'
         )
-E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204
-E       assert 403 == 204
-E         +403
-E         -204
+        response = admin_client.get('/api/v1/genres/')
+>       test_data = response.json()['results']
+E       TypeError: list indices must be integers or slices, not str
 
-tests\test_03_genre.py:87: AssertionError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/horror/
-_______________ Test03GenreAPI.test_04_genres_check_permission ________________
-
-self = <tests.test_03_genre.Test03GenreAPI object at 0x05437928>
-client = <django.test.client.Client object at 0x04E83958>
-admin_client = <rest_framework.test.APIClient object at 0x05471490>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_04_genres_check_permission(self, client, admin_client):
-        genres = create_genre(admin_client)
-        data = {
-            'name': 'Боевик',
-            'slug': 'action'
-        }
-        response = client.post('/api/v1/genres/', data=data)
-        assert response.status_code == 401, (
-            'Проверьте, что при POST запросе `/api/v1/genres/` '
-            'без токена авторизации возвращается статус 401'
-        )
-        response = client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
-        assert response.status_code == 401, (
-            'Проверьте, что при DELETE запросе `/api/v1/genres/{{slug}}/` '
-            'без токена авторизации возвращается статус 401'
-        )
->       user, moderator = create_users_api(admin_client)
-
-tests\test_03_genre.py:138: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:13: in create_users_api
-    user = get_user_model().objects.get(username=data['username'])
-venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <QuerySet [<User: TestAdmin>]>, args = ()
-kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
-
-    def get(self, *args, **kwargs):
-        """
-        Perform the query and return a single object matching the given
-        keyword arguments.
-        """
-        clone = self.filter(*args, **kwargs)
-        if self.query.can_filter() and not self.query.distinct_fields:
-            clone = clone.order_by()
-        num = len(clone)
-        if num == 1:
-            return clone._result_cache[0]
-        if not num:
->           raise self.model.DoesNotExist(
-                "%s matching query does not exist." %
-                self.model._meta.object_name
-            )
-E           users.models.User.DoesNotExist: User matching query does not exist.
-
-venv\lib\site-packages\django\db\models\query.py:406: DoesNotExist
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Unauthorized: /api/v1/genres/
-WARNING  django.request:log.py:222 Unauthorized: /api/v1/genres/horror/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/users/
+tests\test_03_genre.py:91: TypeError
 _____________________ Test04TitleAPI.test_02_title_admin ______________________
 
-self = <tests.test_04_title.Test04TitleAPI object at 0x05110B38>
-admin_client = <rest_framework.test.APIClient object at 0x05609790>
+self = <tests.test_04_title.Test04TitleAPI object at 0x05907E38>
+admin_client = <rest_framework.test.APIClient object at 0x05907628>
 
     @pytest.mark.django_db(transaction=True)
     def test_02_title_admin(self, admin_client):
@@ -756,159 +513,233 @@ admin_client = <rest_framework.test.APIClient object at 0x05609790>
         categories = create_categories(admin_client)
         data = {}
         response = admin_client.post('/api/v1/titles/', data=data)
->       assert response.status_code == 400, (
+        assert response.status_code == 400, (
             'Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400'
         )
-E       AssertionError: Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400
-E       assert 403 == 400
-E         +403
-E         -400
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с правильными данными возвращает статус 201'
+        )
+        data = {'name': 'Проект', 'year': 2020, 'genre': [genres[2]['slug']], 'category': categories[1]['slug'],
+                'description': 'Главная драма года'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с правильными данными возвращает статус 201'
+        )
+        assert type(response.json().get('id')) == int, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` возвращаете данные созданного объекта. '
+            'Значение `id` нет или не является целым числом.'
+        )
+        response = admin_client.get('/api/v1/titles/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращает статус 200'
+        )
+        data = response.json()
+>       assert 'count' in data, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Не найден параметр `count`'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. Не найден параметр `count`
+E       assert 'count' in [{'category': {'name': 'Фильм', 'slug': 'films'}, 'description': 'Крутое пике', 'genre': [{'name': 'Комедия', 'slug': ...', 'slug': 'books'}, 'description': 'Главная драма года', 'genre': [{'name': 'Драма', 'slug': 'drama'}], 'id': 2, ...}]
 
-tests\test_04_title.py:25: AssertionError
+tests\test_04_title.py:49: AssertionError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/titles/
 ____________________ Test04TitleAPI.test_03_titles_detail _____________________
 
-self = <tests.test_04_title.Test04TitleAPI object at 0x05621CD0>
-client = <django.test.client.Client object at 0x04F11970>
-admin_client = <rest_framework.test.APIClient object at 0x04F11418>
+self = <tests.test_04_title.Test04TitleAPI object at 0x059001D8>
+client = <django.test.client.Client object at 0x058E4BC8>
+admin_client = <rest_framework.test.APIClient object at 0x058E41C0>
 
     @pytest.mark.django_db(transaction=True)
     def test_03_titles_detail(self, client, admin_client):
->       titles, categories, genres = create_titles(admin_client)
+        titles, categories, genres = create_titles(admin_client)
+        response = client.get(f'/api/v1/titles/{titles[0]["id"]}/')
+        assert response.status_code != 404, (
+            'Страница `/api/v1/titles/{title_id}/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` '
+            'без токена авторизации возвращается статус 200'
+        )
+        data = response.json()
+        assert type(data.get('id')) == int, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` возвращаете данные объекта. '
+            'Значение `id` нет или не является целым числом.'
+        )
+        assert data.get('category') == categories[0], (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` возвращаете данные объекта. '
+            'Значение `category` неправильное.'
+        )
+        assert data.get('name') == titles[0]['name'], (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` возвращаете данные объекта. '
+            'Значение `name` неправильное.'
+        )
+        data = {
+            'name': 'Новое название',
+            'category': categories[1]['slug']
+        }
+        response = admin_client.patch(f'/api/v1/titles/{titles[0]["id"]}/', data=data)
+        assert response.status_code == 200, (
+            'Проверьте, что при PATCH запросе `/api/v1/titles/{title_id}/` возвращается статус 200'
+        )
+        data = response.json()
+        assert data.get('name') == 'Новое название', (
+            'Проверьте, что при PATCH запросе `/api/v1/titles/{title_id}/` возвращаете данные объекта. '
+            'Значение `name` изменено.'
+        )
+        response = admin_client.get(f'/api/v1/titles/{titles[0]["id"]}/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` '
+            'без токена авторизации возвращается статус 200'
+        )
+        data = response.json()
+        assert data.get('category') == categories[1], (
+            'Проверьте, что при PATCH запросе `/api/v1/titles/{title_id}/` изменяете значение `category`.'
+        )
+        assert data.get('name') == 'Новое название', (
+            'Проверьте, что при PATCH запросе `/api/v1/titles/{title_id}/` изменяете значение `name`.'
+        )
+    
+        response = admin_client.delete(f'/api/v1/titles/{titles[0]["id"]}/')
+        assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/titles/{title_id}/` возвращаете статус 204'
+        )
+        response = admin_client.get('/api/v1/titles/')
+>       test_data = response.json()['results']
+E       TypeError: list indices must be integers or slices, not str
 
-tests\test_04_title.py:151: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-admin_client = <rest_framework.test.APIClient object at 0x04F11418>
-
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
-
-tests\common.py:69: KeyError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
-_______________ Test04TitleAPI.test_04_titles_check_permission ________________
-
-self = <tests.test_04_title.Test04TitleAPI object at 0x04EBA298>
-client = <django.test.client.Client object at 0x05417E08>
-admin_client = <rest_framework.test.APIClient object at 0x054170A0>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_04_titles_check_permission(self, client, admin_client):
->       titles, categories, genres = create_titles(admin_client)
-
-tests\test_04_title.py:231: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-admin_client = <rest_framework.test.APIClient object at 0x054170A0>
-
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
-
-tests\common.py:69: KeyError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
-___________________ Test05ReviewAPI.test_01_review_not_auth ___________________
-
-self = <tests.test_05_review.Test05ReviewAPI object at 0x05423CE8>
-client = <django.test.client.Client object at 0x05423BC8>
-admin_client = <rest_framework.test.APIClient object at 0x054236D0>
-
-    @pytest.mark.django_db(transaction=True)
-    def test_01_review_not_auth(self, client, admin_client):
->       titles, _, _ = create_titles(admin_client)
-
-tests\test_05_review.py:11: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-admin_client = <rest_framework.test.APIClient object at 0x054236D0>
-
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
-
-tests\common.py:69: KeyError
------------------------------- Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+tests\test_04_title.py:204: TypeError
 ____________________ Test05ReviewAPI.test_02_review_admin _____________________
 
-self = <tests.test_05_review.Test05ReviewAPI object at 0x05490358>
-admin_client = <rest_framework.test.APIClient object at 0x056BBDD8>
+self = <tests.test_05_review.Test05ReviewAPI object at 0x059075F8>
+admin_client = <rest_framework.test.APIClient object at 0x058E9808>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
     def test_02_review_admin(self, admin_client, admin):
->       titles, _, _ = create_titles(admin_client)
+        titles, _, _ = create_titles(admin_client)
+        user, moderator = create_users_api(admin_client)
+        client_user = auth_client(user)
+        client_moderator = auth_client(moderator)
+        data = {}
+        response = admin_client.post(f'/api/v1/titles/{titles[0]["id"]}/reviews/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/` '
+            'с не правильными данными возвращает статус 400'
+        )
+>       self.create_review(admin_client, titles[0]["id"], 'qwerty', 5)
 
-tests\test_05_review.py:32: 
+tests\test_05_review.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_05_review.py:23: in create_review
+    response = client_user.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x056BBDD8>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+WARNING  django.request:log.py:222 Bad Request: /api/v1/titles/9/reviews/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/9/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 ____________________ Test05ReviewAPI.test_03_review_detail ____________________
 
-self = <tests.test_05_review.Test05ReviewAPI object at 0x05451448>
-client = <django.test.client.Client object at 0x05451B20>
-admin_client = <rest_framework.test.APIClient object at 0x054518C8>
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05D0FDA8>
+client = <django.test.client.Client object at 0x05CF3CE8>
+admin_client = <rest_framework.test.APIClient object at 0x05CF3A30>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -917,35 +748,113 @@ admin = <User: TestAdmin>
 
 tests\test_05_review.py:202: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x054518C8>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/11/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 ______________ Test05ReviewAPI.test_04_reviews_check_permission _______________
 
-self = <tests.test_05_review.Test05ReviewAPI object at 0x05110EC8>
-client = <django.test.client.Client object at 0x051104D8>
-admin_client = <rest_framework.test.APIClient object at 0x04E99E68>
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05AEFA90>
+client = <django.test.client.Client object at 0x05BE3A48>
+admin_client = <rest_framework.test.APIClient object at 0x05BE3508>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -954,35 +863,113 @@ admin = <User: TestAdmin>
 
 tests\test_05_review.py:319: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x04E99E68>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/13/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 __________________ Test06CommentAPI.test_01_comment_not_auth __________________
 
-self = <tests.test_06_comment.Test06CommentAPI object at 0x05110B08>
-client = <django.test.client.Client object at 0x04F032B0>
-admin_client = <rest_framework.test.APIClient object at 0x04F03DA8>
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05ABF460>
+client = <django.test.client.Client object at 0x05A30CA0>
+admin_client = <rest_framework.test.APIClient object at 0x05A59F88>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -991,34 +978,112 @@ admin = <User: TestAdmin>
 
 tests\test_06_comment.py:10: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x04F03DA8>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/15/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 ______________________ Test06CommentAPI.test_02_comment _______________________
 
-self = <tests.test_06_comment.Test06CommentAPI object at 0x0545B1C0>
-admin_client = <rest_framework.test.APIClient object at 0x0545B808>
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05D3AE38>
+admin_client = <rest_framework.test.APIClient object at 0x05D7C418>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -1027,35 +1092,113 @@ admin = <User: TestAdmin>
 
 tests\test_06_comment.py:32: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x0545B808>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/17/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 ___________________ Test06CommentAPI.test_03_review_detail ____________________
 
-self = <tests.test_06_comment.Test06CommentAPI object at 0x05110100>
-client = <django.test.client.Client object at 0x053B4370>
-admin_client = <rest_framework.test.APIClient object at 0x053B4F88>
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05CC2DC0>
+client = <django.test.client.Client object at 0x05CDFD60>
+admin_client = <rest_framework.test.APIClient object at 0x05CDF8B0>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -1066,35 +1209,113 @@ tests\test_06_comment.py:132:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 tests\common.py:105: in create_comments
     reviews, titles, user, moderator = create_reviews(admin_client, admin)
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x053B4F88>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/19/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 ______________ Test06CommentAPI.test_04_comment_check_permission ______________
 
-self = <tests.test_06_comment.Test06CommentAPI object at 0x0535A2E0>
-client = <django.test.client.Client object at 0x051A5778>
-admin_client = <rest_framework.test.APIClient object at 0x04DD07C0>
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05D88C88>
+client = <django.test.client.Client object at 0x05A809D0>
+admin_client = <rest_framework.test.APIClient object at 0x05A80628>
 admin = <User: TestAdmin>
 
     @pytest.mark.django_db(transaction=True)
@@ -1105,57 +1326,124 @@ tests\test_06_comment.py:228:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 tests\common.py:105: in create_comments
     reviews, titles, user, moderator = create_reviews(admin_client, admin)
-tests\common.py:85: in create_reviews
-    titles, _, _ = create_titles(admin_client)
+tests\common.py:90: in create_reviews
+    result.append({'id': create_review(admin_client, titles[0]["id"], 'qwerty', 5),
+tests\common.py:82: in create_review
+    response = uclient.post(f'/api/v1/titles/{title_id}/reviews/', data=data)
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:18: in create
+    serializer.is_valid(raise_exception=True)
+venv\lib\site-packages\rest_framework\serializers.py:220: in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+venv\lib\site-packages\rest_framework\serializers.py:421: in run_validation
+    self.run_validators(value)
+venv\lib\site-packages\rest_framework\serializers.py:454: in run_validators
+    super().run_validators(to_validate)
+venv\lib\site-packages\rest_framework\fields.py:591: in run_validators
+    validator(value, self)
+venv\lib\site-packages\rest_framework\validators.py:148: in __call__
+    self.enforce_required_fields(attrs, serializer)
+venv\lib\site-packages\rest_framework\validators.py:106: in enforce_required_fields
+    missing_items = {
+venv\lib\site-packages\rest_framework\validators.py:109: in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-admin_client = <rest_framework.test.APIClient object at 0x04DD07C0>
+self = {'id': IntegerField(label='ID', read_only=True), 'text': CharField(style={'base_template': 'textarea.html'}), 'author'...e, slug_field='username'), 'score': IntegerField(), 'pub_date': DateTimeField(label='Дата добавления', read_only=True)}
+key = 'title_id'
 
-    def create_titles(admin_client):
-        genres = create_genre(admin_client)
-        categories = create_categories(admin_client)
-        result = []
-        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
-                'category': categories[0]['slug'], 'description': 'Крутое пике'}
-        response = admin_client.post('/api/v1/titles/', data=data)
->       data['id'] = response.json()['id']
-E       KeyError: 'id'
+    def __getitem__(self, key):
+>       return self.fields[key]
+E       KeyError: 'title_id'
 
-tests\common.py:69: KeyError
+venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:155: KeyError
 ------------------------------ Captured log call ------------------------------
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/genres/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/categories/
-WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/21/reviews/
+Traceback (most recent call last):
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 421, in run_validation
+    self.run_validators(value)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 454, in run_validators
+    super().run_validators(to_validate)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\fields.py", line 591, in run_validators
+    validator(value, self)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 148, in __call__
+    self.enforce_required_fields(attrs, serializer)
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 106, in enforce_required_fields
+    missing_items = {
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\validators.py", line 109, in <dictcomp>
+    if serializer.fields[field_name].source not in attrs
+  File "c:\users\vladislav.kovalev\downloads\dev\api_yamdb\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'title_id'
 -------------------------- Captured stderr teardown ---------------------------
 Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
 =========================== short test summary info ===========================
 FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup
-FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
-FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted
 FAILED tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin - Asser...
 FAILED tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search - A...
-FAILED tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin - A...
-FAILED tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser
-FAILED tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin
-FAILED tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin
-FAILED tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin
-FAILED tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions
-FAILED tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin - us...
+FAILED tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin - T...
+FAILED tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin - As...
 FAILED tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin
 FAILED tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user
 FAILED tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin
 FAILED tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin
-FAILED tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin
 FAILED tests/test_03_genre.py::Test03GenreAPI::test_02_genre - AssertionError...
-FAILED tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete - Assert...
-FAILED tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete - TypeEr...
 FAILED tests/test_04_title.py::Test04TitleAPI::test_02_title_admin - Assertio...
-FAILED tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail - KeyErr...
-FAILED tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission
-FAILED tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth - Ke...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail - TypeEr...
 FAILED tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin - KeyEr...
 FAILED tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail - KeyE...
 FAILED tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission
@@ -1163,4 +1451,4 @@ FAILED tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth
 FAILED tests/test_06_comment.py::Test06CommentAPI::test_02_comment - KeyError...
 FAILED tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail - Ke...
 FAILED tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission
-======================= 31 failed, 22 passed in 10.43s ========================
+======================= 20 failed, 33 passed in 13.24s ========================

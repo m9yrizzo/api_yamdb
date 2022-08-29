@@ -7,11 +7,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import status, permissions
+from rest_framework.pagination import PageNumberPagination
 
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from categories.models import Title
@@ -35,7 +36,7 @@ from .permissions import (
 from users.models import User
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([AllowAny,])
 def get_confirmation_code(request):
 #    email = request.data.get('email')
 #    username = request.data.get('username')
@@ -68,7 +69,7 @@ def get_confirmation_code(request):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([AllowAny,])
 def get_token(request):
     serializer = JWTTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -91,7 +92,8 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_url_kwarg = 'username'
     lookup_field = 'username'
     search_fields = ('username', 'role',)
-    permission_classes = (IsAdmin, IsAuthenticated)
+    permission_classes = [IsAdminUser | IsAdmin,]
+    pagination_class = LimitOffsetPagination
   
     def get_object(self):
         if self.kwargs['username'] == 'me':
