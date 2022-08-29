@@ -73,7 +73,7 @@ class Command(BaseCommand):
                 id = row3['id']
                 name = row3['name']
                 year = row3['year']
-                category = row3['category']
+                category = Category.objects.get(id=row3['category'])
                 titles = Title(
                     id=id,
                     name=name,
@@ -97,8 +97,6 @@ class Command(BaseCommand):
                 )
                 genre_titles.save()
 
-
-'''
         with open(
             'static\\data\\review.csv', 'r', encoding='utf-8'
         ) as csv_file:
@@ -107,7 +105,7 @@ class Command(BaseCommand):
                 id = row1['id']
                 title_id = row1['title_id']
                 text = row1['text']
-                author = row1['author']
+                author = User.objects.get(id=row1['author'])
                 score = row1['score']
                 pub_date = row1['pub_date']
                 reviews = Review(
@@ -128,7 +126,7 @@ class Command(BaseCommand):
                 id = row2['id']
                 review_id = row2['review_id']
                 text = row2['text']
-                author = row2['author']
+                author = User.objects.get(id=row2['author'])
                 pub_date = row2['pub_date']
                 comments = Comment(
                     id=id,
@@ -138,4 +136,3 @@ class Command(BaseCommand):
                     pub_date=pub_date,
                 )
                 comments.save()
-'''
