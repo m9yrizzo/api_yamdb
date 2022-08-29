@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, action
-from rest_framework import status, permissions
+from rest_framework import status, permissions, filters
 from rest_framework.pagination import PageNumberPagination
 
 from django.shortcuts import get_object_or_404
@@ -32,6 +32,7 @@ from .permissions import (
     IsAdmin,
     IsModerator,
     ReadOnlyPermission,
+    OwnerPermission,
 )
 from users.models import User
 
@@ -91,9 +92,10 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UsersSerializer
     lookup_url_kwarg = 'username'
     lookup_field = 'username'
+    filter_backends = (filters.SearchFilter,)
     search_fields = ('username', 'role',)
-    permission_classes = [IsAdminUser | IsAdmin,]
-    pagination_class = LimitOffsetPagination
+    permission_classes = [IsAdminUser | IsAdmin, IsAuthenticated,]
+    pagination_class = PageNumberPagination
   
     def get_object(self):
         if self.kwargs['username'] == 'me':

@@ -35,6 +35,19 @@ class IsAdmin(permissions.BasePermission):
         )
 
 
+class OwnerPermission(permissions.BasePermission):
+
+    def has_permission(self, request, view):
+        return (request.user.is_authenticated
+                and view.action in ('retrieve',
+                                    'update',
+                                    'partial_update',
+                                    'destroy'))
+
+    def has_object_permission(self, request, view, obj):
+        return view.kwargs['username'] == 'me'
+
+
 class IsModerator(permissions.BasePermission):
 
     def has_permission(self, request, view):
