@@ -1,11 +1,9 @@
 from categories.views import CategoryViewSet, GenreViewSet, TitleViewSet
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import (TokenObtainPairView,
-                                            TokenRefreshView, TokenVerifyView)
-
 from .views import (CommentViewSet, ReviewViewSet, UserViewSet, UserView,
                     get_confirmation_code, get_token)
+
 
 app_name = 'api'
 
