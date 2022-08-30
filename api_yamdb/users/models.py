@@ -64,5 +64,8 @@ class User(AbstractUser):
     def is_admin(self):
         return self.role == self.admin or self.is_superuser
 
+    class Meta:
+        ordering = ('username',)
+
     def __str__(self):
         return self.username

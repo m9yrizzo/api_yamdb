@@ -142,7 +142,7 @@ class TitleSerializer(serializers.ModelSerializer):
         if (obj.reviews.all().count() == 0):
             return None
         result = obj.reviews.all().aggregate(Avg('score'))
-        return result
+        return int(result['score__avg'])
 
 
 class ReviewSerializer(serializers.ModelSerializer):

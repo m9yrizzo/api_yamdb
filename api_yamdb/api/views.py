@@ -90,8 +90,7 @@ class UserView(APIView):
         serializer = UserMeSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @staticmethod
-    def patch(request):
+    def patch(self, request):
         user = request.user
         serializer = UserMeSerializer(user, data=request.data)
 
