@@ -84,8 +84,8 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class UserView(APIView):
-    @staticmethod
-    def get(request):
+    permission_classes = [IsAuthenticated,]
+    def get(self, request):
         user = request.user
         serializer = UserMeSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
