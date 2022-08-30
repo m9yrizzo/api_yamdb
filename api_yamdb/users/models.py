@@ -22,13 +22,11 @@ class User(AbstractUser):
         null=False,
         verbose_name='Имя пользователя'
     )
-
     email = models.TextField(
         max_length=50,
         unique=True,
         verbose_name='Почта'
     )
-
     role = models.CharField(
         max_length=30,
         blank=True,

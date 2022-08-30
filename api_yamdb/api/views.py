@@ -39,6 +39,12 @@ from .permissions import (
     OwnerPermission,
 )
 from users.models import User
+from .permissions import (IsAdmin, IsAuthorOrReadOnlyPermission, IsModerator,
+                          OwnerPermission, ReadOnlyPermission)
+from .serializers import (CommentSerializer, ConfirmationCodeSerializer,
+                          JWTTokenSerializer, ReviewSerializer,
+                          UsersSerializer, UserMeSerializer)
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny,])
@@ -52,10 +58,10 @@ def get_confirmation_code(request):
             'Регистрация', f'Код подтверждения: {confirmation_code}',
             'admin@yambd', [email], fail_silently=False, )
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
- 
+
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([AllowAny,])
 def get_token(request):
     serializer = JWTTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -91,6 +97,24 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.kwargs['username'] == 'me':
             return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
         return super().destroy(request, *args, **kwargs)
+
+
+class UserView(APIView):
+    @staticmethod
+    def get(request):
+        user = request.user
+        serializer = UserMeSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @staticmethod
+    def patch(request):
+        user = request.user
+        serializer = UserMeSerializer(user, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
