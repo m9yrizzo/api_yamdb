@@ -10,18 +10,6 @@ from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import exceptions, filters, viewsets
 
-from api.filters import TitleFilter
-from api.permissions import IsAdminSuperuserOrReadOnly
-from api.serializers import (CategorySerializer, GenreSerializer,
-                             TitleSerializer)
-from categories.models import Category, Genre, Title
-from api.permissions import (
-    IsAuthorOrReadOnlyPermission,
-    IsAdmin,
-    IsModerator,
-    ReadOnlyPermission,
-)
-
 
 class CategoryGenreViewSet(viewsets.ModelViewSet):
     def get_object(self):
