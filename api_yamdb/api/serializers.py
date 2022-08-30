@@ -121,8 +121,7 @@ class TitleSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(
         slug_field='slug', queryset=Category.objects.all(), required=True
     )
-    # rating = serializers.IntegerField(required=False)
-    rating = serializers.SerializerMethodField()
+    rating = serializers.IntegerField(required=False)
 
 
     class Meta:
