@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from django.shortcuts import render
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
@@ -31,21 +30,21 @@ from .serializers import (CommentSerializer, ConfirmationCodeSerializer,
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny,])
+@permission_classes([AllowAny, ])
 def get_confirmation_code(request):
-        serializer = ConfirmationCodeSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        email = serializer.validated_data['email']
-        confirmation_code = default_token_generator.make_token(user)
-        send_mail(
-            'Регистрация', f'Код подтверждения: {confirmation_code}',
-            'admin@yambd', [email], fail_silently=False, )
-        return Response(serializer.validated_data, status=status.HTTP_200_OK)
+    serializer = ConfirmationCodeSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    user = serializer.save()
+    email = serializer.validated_data['email']
+    confirmation_code = default_token_generator.make_token(user)
+    send_mail(
+        'Регистрация', f'Код подтверждения: {confirmation_code}',
+        'admin@yambd', [email], fail_silently=False, )
+    return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny,])
+@permission_classes([AllowAny, ])
 def get_token(request):
     serializer = JWTTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -68,15 +67,16 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_field = 'username'
     filter_backends = (filters.SearchFilter,)
     search_fields = ('username', 'role',)
-    permission_classes = [IsAdminUser | IsAdmin, IsAuthenticated,]
+    permission_classes = [IsAdminUser | IsAdmin, IsAuthenticated, ]
     pagination_class = PageNumberPagination
-  
+
     def get_object(self):
         if self.kwargs['username'] == 'me':
             obj = self.request.user
             self.check_object_permissions(self.request, obj)
             return obj
         return super().get_object()
+
     def destroy(self, request, *args, **kwargs):
         if self.kwargs['username'] == 'me':
             return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -102,22 +102,20 @@ class UserView(APIView):
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    queryset = Review.objects.all()
+    # queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = [
-        IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,
+        IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission
     ]
     pagination_class = PageNumberPagination
 
-    def get_title_id(self):
-        return get_object_or_404(Title, pk=self.kwargs.get('title_id'))
-
     def get_queryset(self):
-        return self.get_title_id().reviews.all()
+        title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
+        return title.reviews.all()
 
     def perform_create(self, serializer):
-        title = self.get_title_id()
-        serializer.save(author=self.request.user, title_id=title)
+        title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
+        serializer.save(author=self.request.user, title=title)
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -125,14 +123,14 @@ class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [
         IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,
     ]
-    pagination_class = LimitOffsetPagination
-
-    def get_review_id(self):
-        return get_object_or_404(Review, pk=self.kwargs.get('review_id'))
+    pagination_class = PageNumberPagination
 
     def get_queryset(self):
-        return self.get_review_id().comments.all()
+        review = get_object_or_404(Review, pk=self.kwargs.get('review_id'))
+        return review.comments.all()
 
     def perform_create(self, serializer):
-        review = self.get_review_id()
-        serializer.save(author=self.request.user, review_id=review)
+        review_id = self.kwargs.get('review_id')
+        title_id = self.kwargs.get('title_id')
+        review = get_object_or_404(Review, id=review_id, title=title_id)
+        serializer.save(author=self.request.user, review=review)
