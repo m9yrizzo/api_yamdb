@@ -4,14 +4,11 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes, action
-from rest_framework import status, permissions, filters
+from rest_framework import status, filters
 from rest_framework.pagination import PageNumberPagination
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework import status
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
@@ -22,21 +19,8 @@ from reviews.models import Review
 from categories.models import Title
 
 from .serializers import (
-    ConfirmationCodeSerializer,
-    UsersSerializer,
-    JWTTokenSerializer,
-    UsersSerializer,
-)
-from .serializers import (
     ReviewSerializer,
     CommentSerializer,
-)
-from .permissions import (
-    IsAuthorOrReadOnlyPermission,
-    IsAdmin,
-    IsModerator,
-    ReadOnlyPermission,
-    OwnerPermission,
 )
 from users.models import User
 from .permissions import (IsAdmin, IsAuthorOrReadOnlyPermission, IsModerator,
@@ -123,7 +107,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     permission_classes = [
         IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,
     ]
-    pagination_class = LimitOffsetPagination
+    pagination_class = PageNumberPagination
 
     def get_title_id(self):
         return get_object_or_404(Title, pk=self.kwargs.get('title_id'))

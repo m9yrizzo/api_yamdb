@@ -1,7 +1,5 @@
 from api.filters import TitleFilter
-from api.permissions import (IsAdmin, IsAdminSuperuserOrReadOnly,
-                             IsAuthorOrReadOnlyPermission, IsModerator,
-                             ReadOnlyPermission)
+from api.permissions import (IsAdmin, ReadOnlyPermission)
 from api.serializers import (CategorySerializer, GenreSerializer,
                              TitleSerializer)
 from categories.models import Category, Genre, Title

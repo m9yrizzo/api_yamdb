@@ -6,17 +6,27 @@ from rest_framework.validators import UniqueTogetherValidator
 from reviews.models import Comment, Review
 from users.models import User
 
+from django.db.models import Q
+from users.validators import validate_user
 
 class ConfirmationCodeSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('username', 'email',)
         model = User
+    username = serializers.CharField(
+        max_length=150,
+        validators=[validate_user]
+    )
+    email = serializers.EmailField(
+        max_length=254,
+    )
     def validate_username(self, value):
         if value == 'me':
             raise serializers.ValidationError(
                 'Не разрешается использовать имя пользователя "me".'
             )
         return value
+ 
 
 class JWTTokenSerializer(serializers.ModelSerializer):
     username = serializers.CharField(required=True)
