@@ -3,8 +3,7 @@ from django.core.management.base import BaseCommand
 import csv
 
 from reviews.models import Review, Comment
-from categories.models import Title, Category, Genre, TitleGenre
-
+from categories.models import Title, Genre, Category, TitleGenre
 
 User = get_user_model()
 
@@ -12,8 +11,10 @@ User = get_user_model()
 class Command(BaseCommand):
     help = 'load data from csv files'
 
-    def handle_1(self, *args, **options):
-        with open('static\\data\\users.csv') as csv_file:
+    def handle(self, *args, **options):
+        with open(
+            'static\\data\\users.csv', 'r', encoding='utf-8'
+        ) as csv_file:
             csv_reader = csv.DictReader(csv_file, delimiter=',')
             for row in csv_reader:
                 id = row['id']
@@ -34,16 +35,79 @@ class Command(BaseCommand):
                 )
                 users.save()
 
-    def handle_2(self, *args, **options):
-        with open('static\\data\\review.csv') as csv_file:
+        with open(
+            'static\\data\\category.csv', 'r', encoding='utf-8'
+        ) as csv_file:
             csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                title_id = row['title_id']
-                text = row['text']
-                author = row['author']
-                score = row['score']
-                pub_date = row['pub_date']
+            for row4 in csv_reader:
+                id = row4['id']
+                name = row4['name']
+                slug = row4['slug']
+                categories = Category(
+                    id=id,
+                    name=name,
+                    slug=slug,
+                )
+                categories.save()
+
+        with open(
+            'static\\data\\genre.csv', 'r', encoding='utf-8'
+        ) as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row5 in csv_reader:
+                id = row5['id']
+                name = row5['name']
+                slug = row5['slug']
+                genres = Genre(
+                    id=id,
+                    name=name,
+                    slug=slug,
+                )
+                genres.save()
+
+        with open(
+            'static\\data\\titles.csv', 'r', encoding='utf-8'
+        ) as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row3 in csv_reader:
+                id = row3['id']
+                name = row3['name']
+                year = row3['year']
+                category = Category.objects.get(id=row3['category'])
+                titles = Title(
+                    id=id,
+                    name=name,
+                    year=year,
+                    category=category,
+                )
+                titles.save()
+
+        with open(
+            'static\\data\\genre_title.csv', 'r', encoding='utf-8'
+        ) as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row6 in csv_reader:
+                id = row6['id']
+                title_id = row6['title_id']
+                genre_id = row6['genre_id']
+                genre_titles = TitleGenre(
+                    id=id,
+                    title_id=title_id,
+                    genre_id=genre_id,
+                )
+                genre_titles.save()
+
+        with open(
+            'static\\data\\review.csv', 'r', encoding='utf-8'
+        ) as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row1 in csv_reader:
+                id = row1['id']
+                title_id = row1['title_id']
+                text = row1['text']
+                author = User.objects.get(id=row1['author'])
+                score = row1['score']
+                pub_date = row1['pub_date']
                 reviews = Review(
                     id=id,
                     title_id=title_id,
@@ -54,15 +118,16 @@ class Command(BaseCommand):
                 )
                 reviews.save()
 
-    def handle_3(self, *args, **options):
-        with open('static\\data\\comments.csv') as csv_file:
+        with open(
+            'static\\data\\comments.csv', 'r', encoding='utf-8'
+        ) as csv_file:
             csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                review_id = row['review_id']
-                text = row['text']
-                author = row['author']
-                pub_date = row['pub_date']
+            for row2 in csv_reader:
+                id = row2['id']
+                review_id = row2['review_id']
+                text = row2['text']
+                author = User.objects.get(id=row2['author'])
+                pub_date = row2['pub_date']
                 comments = Comment(
                     id=id,
                     review_id=review_id,
@@ -71,61 +136,3 @@ class Command(BaseCommand):
                     pub_date=pub_date,
                 )
                 comments.save()
-
-    def handle_4(self, *args, **options):
-        with open('static\\data\\titles.csv') as csv_file:
-            csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                name = row['name']
-                year = row['year']
-                category = row['category']
-                titles = Title(
-                    id=id,
-                    name=name,
-                    year=year,
-                    category=category,
-                )
-                titles.save()
-
-    def handle_5(self, *args, **options):
-        with open('static\\data\\category.csv') as csv_file:
-            csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                name = row['name']
-                slug = row['slug']
-                categories = Category(
-                    id=id,
-                    name=name,
-                    slug=slug,
-                )
-                categories.save()
-
-    def handle_6(self, *args, **options):
-        with open('static\\data\\genre.csv') as csv_file:
-            csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                name = row['name']
-                slug = row['slug']
-                genres = Genre(
-                    id=id,
-                    name=name,
-                    slug=slug,
-                )
-                genres.save()
-
-    def handle_7(self, *args, **options):
-        with open('static\\data\\genre_title.csv') as csv_file:
-            csv_reader = csv.DictReader(csv_file, delimiter=',')
-            for row in csv_reader:
-                id = row['id']
-                title_id = row['title_id']
-                genre_id = row['genre_id']
-                genre_titles = TitleGenre(
-                    id=id,
-                    title_id=title_id,
-                    genre_id=genre_id,
-                )
-                genre_titles.save()

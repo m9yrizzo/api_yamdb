@@ -9,14 +9,18 @@ from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import status, permissions, filters
 from rest_framework.pagination import PageNumberPagination
 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import status
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from categories.models import Title
 from reviews.models import Review
+from categories.models import Title
+
 from .serializers import (
     ConfirmationCodeSerializer,
     UsersSerializer,
@@ -39,14 +43,6 @@ from users.models import User
 @api_view(['POST'])
 @permission_classes([AllowAny,])
 def get_confirmation_code(request):
-#    email = request.data.get('email')
-#    username = request.data.get('username')
-#    print(email)
-#    print(username)
-#    is_registered = User.objects.filter(
-#            email=email, username=username)
-#    print(is_registered.exists())
-#    if not is_registered.exists():        
         serializer = ConfirmationCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -56,27 +52,15 @@ def get_confirmation_code(request):
             'Регистрация', f'Код подтверждения: {confirmation_code}',
             'admin@yambd', [email], fail_silently=False, )
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
- #   else:
- #       confirmation_code = default_token_generator.make_token(username)
- #       send_mail(
- #           'Регистрация', f'Код подтверждения: {confirmation_code}',
- #           'admin@yambd', [email], fail_silently=False, )
- #       return Response(serializer.validated_data, status=status.HTTP_200_OK)
-
-#        response = {
-#            'error': 'Пользователь уже зарегистрирован в системе!'
-#        }
-#        return Response(response, status=status.HTTP_400_BAD_REQUEST)
-
+ 
 
 @api_view(['POST'])
-@permission_classes([AllowAny,])
+@permission_classes([AllowAny])
 def get_token(request):
     serializer = JWTTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = get_object_or_404(User, username=serializer.data.get('username'))
     confirmation_code = serializer.data.get('confirmation_code')
-    print('code=',confirmation_code)
     if not default_token_generator.check_token(user, confirmation_code):
         return Response(
             {"Неверный код подтверждения. Повторите попытку."},
@@ -109,11 +93,12 @@ class UserViewSet(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
 
-
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = [ IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,]
+    permission_classes = [
+        IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,
+    ]
     pagination_class = LimitOffsetPagination
 
     def get_title_id(self):
@@ -129,7 +114,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = [IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,]
+    permission_classes = [
+        IsAdmin | IsModerator | IsAuthorOrReadOnlyPermission,
+    ]
     pagination_class = LimitOffsetPagination
 
     def get_review_id(self):

@@ -1,6 +1,7 @@
+from django.db.models import Avg
 from rest_framework import serializers
-from rest_framework.validators import UniqueTogetherValidator
 from rest_framework.relations import SlugRelatedField
+from rest_framework.validators import UniqueTogetherValidator
 from reviews.models import Comment, Review
 from users.models import User
 from categories.models import Category, Genre, Title
@@ -16,6 +17,7 @@ class ConfirmationCodeSerializer(serializers.ModelSerializer):
                 'Не разрешается использовать имя пользователя "me".'
             )
         return value
+
 
 class JWTTokenSerializer(serializers.ModelSerializer):
     username = serializers.CharField(required=True)
@@ -64,7 +66,9 @@ class TitleSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(
         slug_field='slug', queryset=Category.objects.all(), required=True
     )
-    rating = serializers.IntegerField(required=False)
+    # rating = serializers.IntegerField(required=False)
+    rating = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Title
@@ -89,6 +93,9 @@ class TitleSerializer(serializers.ModelSerializer):
             Category.objects.get(slug=data['category'])
         ).data
         return data
+
+    def get_rating(self, obj):
+        return obj.reviews.all().aggregate(Avg('score'))
 
 
 class ReviewSerializer(serializers.ModelSerializer):
