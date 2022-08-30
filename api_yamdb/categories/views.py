@@ -1,13 +1,14 @@
+from api.filters import TitleFilter
+from api.permissions import (IsAdmin, IsAdminSuperuserOrReadOnly,
+                             IsAuthorOrReadOnlyPermission, IsModerator,
+                             ReadOnlyPermission)
+from api.serializers import (CategorySerializer, GenreSerializer,
+                             TitleSerializer)
+from categories.models import Category, Genre, Title
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import exceptions, filters, viewsets
-
-from api.filters import TitleFilter
-from api.permissions import IsAdminSuperuserOrReadOnly
-from api.serializers import (CategorySerializer, GenreSerializer,
-                             TitleSerializer)
-from categories.models import Category, Genre, Title
 
 
 class CategoryGenreViewSet(viewsets.ModelViewSet):
@@ -26,7 +27,7 @@ class CategoryViewSet(CategoryGenreViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field = 'slug'
-    permission_classes = (IsAdminSuperuserOrReadOnly,)
+    permission_classes = [IsAdmin | ReadOnlyPermission,]
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
 
@@ -35,14 +36,14 @@ class GenreViewSet(CategoryGenreViewSet):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     lookup_field = 'slug'
-    permission_classes = (IsAdminSuperuserOrReadOnly,)
+    permission_classes = [IsAdmin | ReadOnlyPermission,]
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
 
 
 class TitleViewSet(viewsets.ModelViewSet):
     serializer_class = TitleSerializer
-    permission_classes = (IsAdminSuperuserOrReadOnly,)
+    permission_classes = [IsAdmin | ReadOnlyPermission,]
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filterset_class = TitleFilter
     search_fields = ('name',)
