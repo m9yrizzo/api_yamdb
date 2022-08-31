@@ -1,6 +1,6 @@
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from rest_framework import filters, status, viewsets
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
@@ -74,7 +74,8 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class UserView(APIView):
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [IsAuthenticated, ]
+
     def get(self, request):
         user = request.user
         serializer = UserMeSerializer(user)
@@ -92,7 +93,7 @@ class UserView(APIView):
 
 class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthorOrReadOnlyPermission,]
+    permission_classes = [IsAuthorOrReadOnlyPermission, ]
     pagination_class = PageNumberPagination
 
     def get_queryset(self):
@@ -106,7 +107,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = [IsAuthorOrReadOnlyPermission,]
+    permission_classes = [IsAuthorOrReadOnlyPermission, ]
     pagination_class = PageNumberPagination
 
     def get_queryset(self):

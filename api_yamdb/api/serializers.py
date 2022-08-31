@@ -1,9 +1,7 @@
 from django.core.exceptions import ValidationError
-from django.core.validators import validate_email
 from django.db.models import Avg
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
-from rest_framework.validators import UniqueTogetherValidator
 
 from categories.models import Category, Genre, Title
 from reviews.models import Comment, Review
@@ -171,17 +169,6 @@ class ReviewSerializer(serializers.ModelSerializer):
             'score',
             'pub_date',
         )
-
-   #     validators = (
-   #         UniqueTogetherValidator(
-   #             queryset=Review.objects.all(),
-   #             fields=('title', 'author'),
-   #             message=(
-   #                 'Пользователь может оставить только'
-   #                 'один отзыв на произведение!'
-   #             )
-   #         ),
-   #     )
 
     def validate(self, data):
         if self.context['request'].method != 'POST':
