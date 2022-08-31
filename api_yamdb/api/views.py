@@ -10,7 +10,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -22,8 +21,7 @@ from .serializers import (
     CommentSerializer,
 )
 from users.models import User
-from .permissions import (IsAdmin, IsAuthorOrReadOnlyPermission, IsModerator,
-                          OwnerPermission, ReadOnlyPermission)
+from .permissions import IsAdmin, IsAuthorOrReadOnlyPermission
 from .serializers import (CommentSerializer, ConfirmationCodeSerializer,
                           JWTTokenSerializer, ReviewSerializer,
                           UsersSerializer, UserMeSerializer)
@@ -101,7 +99,6 @@ class UserView(APIView):
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    # queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthorOrReadOnlyPermission,]
     pagination_class = PageNumberPagination

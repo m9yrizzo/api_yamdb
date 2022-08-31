@@ -5,7 +5,8 @@ from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueTogetherValidator
 from reviews.models import Comment, Review
 from users.models import User
-
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 
 class ConfirmationCodeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -64,9 +65,12 @@ class UserMeSerializer(serializers.ModelSerializer):
 
 
 class ConfirmationCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('username', 'email',)
-        model = User
+    email = serializers.EmailField(required=True)
+
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise ValidationError("Такой адрес почты уже используется.")
+        return value
 
     def validate_username(self, value):
         if value == 'me':
@@ -74,6 +78,10 @@ class ConfirmationCodeSerializer(serializers.ModelSerializer):
                 'Не разрешается использовать имя пользователя "me".'
             )
         return value
+
+    class Meta:
+        fields = ('username', 'email',)
+        model = User
 
 
 class JWTTokenSerializer(serializers.ModelSerializer):
