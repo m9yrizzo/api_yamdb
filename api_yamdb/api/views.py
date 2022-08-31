@@ -1,30 +1,22 @@
-from django.shortcuts import render
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
-
-from rest_framework.views import APIView
-from rest_framework import status, filters
-from rest_framework.pagination import PageNumberPagination
-
-from rest_framework.response import Response
+from django.shortcuts import get_object_or_404, render
+from rest_framework import filters, status, viewsets
 from rest_framework.decorators import api_view, permission_classes
-from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from reviews.models import Review
 from categories.models import Title
-
-from .serializers import (
-    ReviewSerializer,
-    CommentSerializer,
-)
+from reviews.models import Review
 from users.models import User
+
 from .permissions import IsAdmin, IsAuthorOrReadOnlyPermission
 from .serializers import (CommentSerializer, ConfirmationCodeSerializer,
                           JWTTokenSerializer, ReviewSerializer,
-                          UsersSerializer, UserMeSerializer)
+                          UserMeSerializer, UsersSerializer)
 
 
 @api_view(['POST'])

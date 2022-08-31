@@ -1,4 +1,5 @@
 import django_filters
+
 from categories.models import Category, Genre, Title
 
 

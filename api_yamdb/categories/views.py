@@ -1,13 +1,14 @@
-from api.filters import TitleFilter
-from api.permissions import (IsAdmin, ReadOnlyPermission)
-from api.serializers import (CategorySerializer, GenreSerializer,
-                             TitleSerializer)
-from categories.models import Category, Genre, Title
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import exceptions, filters, viewsets
 from rest_framework.pagination import PageNumberPagination
+
+from api.filters import TitleFilter
+from api.permissions import IsAdmin, ReadOnlyPermission
+from api.serializers import (CategorySerializer, GenreSerializer,
+                             TitleSerializer)
+from categories.models import Category, Genre, Title
 
 
 class CategoryGenreViewSet(viewsets.ModelViewSet):
