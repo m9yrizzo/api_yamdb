@@ -64,37 +64,6 @@ class UserMeSerializer(serializers.ModelSerializer):
         )
 
 
-class ConfirmationCodeSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(required=True)
-
-    def validate_email(self, value):
-        if User.objects.filter(email=value).exists():
-            raise ValidationError("Такой адрес почты уже используется.")
-        return value
-
-    def validate_username(self, value):
-        if value == 'me':
-            raise serializers.ValidationError(
-                'Не разрешается использовать имя пользователя "me".'
-            )
-        return value
-
-    class Meta:
-        fields = ('username', 'email',)
-        model = User
-
-
-class JWTTokenSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(required=True)
-    confirmation_code = serializers.CharField(required=True)
-
-    class Meta:
-        fields = (
-            'username', 'confirmation_code',
-        )
-        model = User
-
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
