@@ -3,19 +3,17 @@ from rest_framework import permissions
 
 class IsAuthorOrReadOnlyPermission(permissions.BasePermission):
 
-    def has_permission(self, request, view):
-        return bool(
-            request.method in permissions.SAFE_METHODS
-            or request.user.is_authenticated
-        )
-
     def has_object_permission(self, request, view, obj):
-        return bool(
-            request.method in permissions.SAFE_METHODS
-            or (
-                obj.author == request.user
-                or request.user.role in ['admin', 'moderator']
-            )
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        if request.method == 'POST':
+            return request.user.is_authenticated
+
+        return request.user.is_authenticated and (
+            request.user == obj.author
+            or request.user.is_moderator
+            or request.user.is_admin
         )
 
 

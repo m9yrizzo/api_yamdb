@@ -1,3 +1,4 @@
+from django.core import validators
 from categories.models import Title
 from django.db import models
 from users.models import User
@@ -11,7 +12,18 @@ class Review(models.Model):
         db_index=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reviews')
-    score = models.IntegerField()
+    score = models.PositiveSmallIntegerField(
+        validators=[
+            validators.MaxValueValidator(
+                10,
+                message='Максимальная оценка должна быть не более 10'
+            ),
+            validators.MinValueValidator(
+                1,
+                message='Минимальная оценка должна быть не менее 1'
+            ),
+        ]
+    )
     title = models.ForeignKey(
         Title, on_delete=models.CASCADE, related_name='reviews')
 
