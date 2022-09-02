@@ -1,3 +1,4 @@
+
 from categories.models import Category, Genre, Title
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
@@ -154,11 +155,11 @@ class GenreViewSet(CustomMixin):
 
 
 class TitleViewSet(viewsets.ModelViewSet):
-    queryset = Title.objects.annotate(
-        rating=Avg('reviews__score')
-    ).order_by('-id')
+    queryset = (
+        Title.objects.annotate(rating=Avg('reviews__score')).order_by('-id')
+    )
     permission_classes = [IsAdmin | ReadOnlyPermission, ]
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filterset_class = TitleFilter
     search_fields = ('name',)
     pagination_class = PageNumberPagination
