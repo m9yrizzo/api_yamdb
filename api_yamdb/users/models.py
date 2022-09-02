@@ -2,7 +2,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-# id,username,email,role,bio,first_name,last_name
 class User(AbstractUser):
 
     user = 'user'
@@ -63,6 +62,9 @@ class User(AbstractUser):
     @property
     def is_admin(self):
         return self.role == self.admin or self.is_superuser
+
+    class Meta:
+        ordering = ('username',)
 
     def __str__(self):
         return self.username

@@ -1,4 +1,5 @@
 from django.db import models
+from api.validators import validate_year
 
 
 class Genre(models.Model):
@@ -46,7 +47,8 @@ class Title(models.Model):
     )
     year = models.IntegerField(
         verbose_name='Год создания',
-        db_index=True
+        db_index=True,
+        validators=[validate_year]
     )
     description = models.TextField(
         verbose_name='Описание произведения',
