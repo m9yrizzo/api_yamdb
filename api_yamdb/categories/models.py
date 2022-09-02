@@ -1,5 +1,5 @@
-from django.db import models
 from api.validators import validate_year
+from django.db import models
 
 
 class Genre(models.Model):

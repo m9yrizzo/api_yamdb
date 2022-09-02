@@ -22,7 +22,7 @@ from .permissions import (IsAdmin, IsAuthorOrReadOnlyPermission,
 from .serializers import (CategorySerializer, CommentSerializer,
                           ConfirmationCodeSerializer, GenreSerializer,
                           JWTTokenSerializer, ReviewSerializer,
-                          TitleSerializer, TitleCreateSerializer,
+                          TitleCreateSerializer, TitleSerializer,
                           UserMeSerializer, UsersSerializer)
 
 
