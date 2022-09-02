@@ -1,5 +1,3 @@
-import datetime as dt
-
 from categories.models import Category, Genre, Title
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
@@ -135,14 +133,6 @@ class TitleCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Title
         fields = '__all__'
-
-    def validate_year(self, value):
-        year = dt.date.today().year
-        if not (value <= year):
-            raise serializers.ValidationError(
-                'Год создания произведения не может быть в будущем!'
-            )
-        return value
 
 
 class ReviewSerializer(serializers.ModelSerializer):
