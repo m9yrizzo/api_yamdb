@@ -182,13 +182,6 @@ class ReviewSerializer(serializers.ModelSerializer):
             )
         return data
 
-    def validate_score(self, value):
-        if (value >= 1 and value <= 10):
-            return value
-        raise serializers.ValidationError(
-            'Рэйтинг должен быть в диапазоне 1..10'
-        )
-
 
 class CommentSerializer(serializers.ModelSerializer):
     author = SlugRelatedField(
