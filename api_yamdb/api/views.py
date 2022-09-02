@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import filters, status, viewsets
 from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -57,8 +57,7 @@ class UserViewSet(viewsets.ModelViewSet):
     lookup_field = 'username'
     filter_backends = (filters.SearchFilter,)
     search_fields = ('username', 'role',)
-#    permission_classes = [IsAuthenticatedOrReadOnly | IsAuthorAdminModeratorOrReadOnly, ]
-    permission_classes = [IsAdminUser | IsAdmin, IsAuthenticated, ]
+    permission_classes = IsAdmin,
     pagination_class = PageNumberPagination
 
     @action(detail=False, methods=['get', 'patch'],

@@ -5,7 +5,7 @@ from rest_framework import exceptions, filters, viewsets
 from rest_framework.pagination import PageNumberPagination
 
 from api.filters import TitleFilter
-from api.permissions import IsAdmin, IsAuthenticatedOrReadOnly, IsAuthorAdminModeratorOrReadOnly, ReadOnlyPermission
+from api.permissions import IsAdmin, IsAuthenticatedOrReadOnly, IsAuthorAdminModeratorOrReadOnly, ReadOnlyPermission, IsAdminOrReadOnly
 from api.serializers import (CategorySerializer, GenreSerializer,
                              TitleSerializer)
 from categories.models import Category, Genre, Title
@@ -28,7 +28,8 @@ class CategoryViewSet(CategoryGenreViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field = 'slug'
-    permission_classes = [IsAdmin | IsAuthenticatedOrReadOnly, ]
+    permission_classes = IsAdminOrReadOnly,
+    #permission_classes = [IsAdmin | ReadOnlyPermission, ]
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
     pagination_class = PageNumberPagination
@@ -38,7 +39,8 @@ class GenreViewSet(CategoryGenreViewSet):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     lookup_field = 'slug'
-    permission_classes = [IsAdmin | IsAuthenticatedOrReadOnly, ]
+    permission_classes = IsAdminOrReadOnly,
+    #permission_classes = [IsAdmin | ReadOnlyPermission, ]
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
     pagination_class = PageNumberPagination
@@ -46,7 +48,8 @@ class GenreViewSet(CategoryGenreViewSet):
 
 class TitleViewSet(viewsets.ModelViewSet):
     serializer_class = TitleSerializer
-    permission_classes = IsAdmin | ReadOnlyPermission,
+    permission_classes = IsAdminOrReadOnly,
+    #permission_classes = IsAdmin | ReadOnlyPermission,
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filterset_class = TitleFilter
     search_fields = ('name',)
