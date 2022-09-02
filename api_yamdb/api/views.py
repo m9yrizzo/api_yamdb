@@ -20,7 +20,7 @@ from users.models import User
 
 from .filters import TitleFilter
 from .permissions import (IsAdmin, IsAdminOrReadOnly,
-                          IsAuthorOrReadOnlyPermission)
+                          IsAuthorAdminModeratorOrReadOnly)
 from .serializers import (CategorySerializer, CommentSerializer,
                           ConfirmationCodeSerializer, GenreSerializer,
                           JWTTokenSerializer, ReviewSerializer,
@@ -86,7 +86,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
     permission_classes = [
         IsAuthenticatedOrReadOnly,
-        IsAuthorOrReadOnlyPermission,
+        IsAuthorAdminModeratorOrReadOnly,
     ]
     pagination_class = PageNumberPagination
 
@@ -103,7 +103,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
     permission_classes = [
         IsAuthenticatedOrReadOnly,
-        IsAuthorOrReadOnlyPermission,
+        IsAuthorAdminModeratorOrReadOnly,
     ]
     pagination_class = PageNumberPagination
 
