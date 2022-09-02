@@ -45,11 +45,11 @@ class UsersSerializer(serializers.ModelSerializer):
         )
         model = User
 
-    def validate_role(self, value):
-        user = self.context['request'].user
-        if user.role == 'user' and value == 'admin':
-            value = 'user'
-        return value
+#    def validate_role(self, value):
+#        user = self.context['request'].user
+#        if user.role == 'user' and value == 'admin':
+#            value = 'user'
+#        return value
 
 
 class CategorySerializer(serializers.ModelSerializer):
