@@ -1,6 +1,5 @@
-from django.db import models
-
 from categories.models import Title
+from django.db import models
 from users.models import User
 
 

@@ -1,9 +1,7 @@
+from categories.models import Category, Genre, Title
 from django.core.exceptions import ValidationError
-from django.db.models import Avg
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
-
-from categories.models import Category, Genre, Title
 from reviews.models import Comment, Review
 from users.models import User
 
@@ -98,58 +96,43 @@ class JWTTokenSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name', 'slug',)
+        exclude = ['id']
         lookup_field = 'slug'
 
 
 class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
-        fields = ('name', 'slug',)
+        exclude = ['id']
         lookup_field = 'slug'
 
 
 class TitleSerializer(serializers.ModelSerializer):
-    genre = serializers.SlugRelatedField(
-        slug_field='slug',
-        queryset=Genre.objects.all(),
-        many=True,
-        required=True,
-    )
-    category = serializers.SlugRelatedField(
-        slug_field='slug', queryset=Category.objects.all(), required=True
-    )
-    rating = serializers.SerializerMethodField(required=False)
+    category = CategorySerializer(read_only=True)
+    genre = GenreSerializer(many=True, read_only=True)
+    rating = serializers.FloatField(read_only=True)
 
     class Meta:
         model = Title
-        fields = (
-            'id',
-            'name',
-            'year',
-            'description',
-            'genre',
-            'category',
-            'rating',
-        )
+        fields = '__all__'
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        genre_list = []
-        for genre_data in data['genre']:
-            genre = GenreSerializer(Genre.objects.get(slug=genre_data)).data
-            genre_list.append(genre)
-        data['genre'] = genre_list
-        data['category'] = CategorySerializer(
-            Category.objects.get(slug=data['category'])
-        ).data
-        return data
 
-    def get_rating(self, obj):
-        if (obj.reviews.all().count() == 0):
-            return None
-        result = obj.reviews.all().aggregate(Avg('score'))
-        return int(result['score__avg'])
+class TitleCreateSerializer(serializers.ModelSerializer):
+    category = serializers.SlugRelatedField(
+        slug_field='slug',
+        queryset=Category.objects.all(),
+        required=True
+    )
+    genre = serializers.SlugRelatedField(
+        slug_field='slug',
+        queryset=Genre.objects.all(),
+        required=True,
+        many=True
+    )
+
+    class Meta:
+        model = Title
+        fields = '__all__'
 
 
 class ReviewSerializer(serializers.ModelSerializer):
