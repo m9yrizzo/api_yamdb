@@ -9,9 +9,12 @@ from users.models import User
 
 
 class ConfirmationCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('username', 'email',)
-        model = User
+    email = serializers.EmailField(required=True)
+
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise ValidationError("Такой адрес почты уже используется.")
+        return value
 
     def validate_username(self, value):
         if value == 'me':
@@ -19,6 +22,10 @@ class ConfirmationCodeSerializer(serializers.ModelSerializer):
                 'Не разрешается использовать имя пользователя "me".'
             )
         return value
+
+    class Meta:
+        fields = ('username', 'email',)
+        model = User
 
 
 class JWTTokenSerializer(serializers.ModelSerializer):
@@ -44,24 +51,6 @@ class UsersSerializer(serializers.ModelSerializer):
         if user.role == 'user' and value == 'admin':
             value = 'user'
         return value
-
-
-class UserMeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = (
-            'username',
-            'email',
-            'first_name',
-            'last_name',
-            'bio',
-            'role',
-        )
-        read_only_fields = (
-            'role',
-            'username',
-            'email',
-        )
 
 
 class CategorySerializer(serializers.ModelSerializer):
