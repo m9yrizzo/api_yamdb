@@ -1,5 +1,5 @@
 import csv
-from categories.models import Category, Genre, Title, TitleGenre
+
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 

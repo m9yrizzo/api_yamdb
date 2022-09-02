@@ -1,65 +1,10 @@
-from categories.models import Category, Genre, Title
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
+
+from categories.models import Category, Genre, Title
 from reviews.models import Comment, Review
 from users.models import User
-
-
-class ConfirmationCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('username', 'email',)
-        model = User
-
-    def validate_username(self, value):
-        if value == 'me':
-            raise serializers.ValidationError(
-                'Не разрешается использовать имя пользователя "me".'
-            )
-        return value
-
-
-class JWTTokenSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(required=True)
-    confirmation_code = serializers.CharField(required=True)
-
-    class Meta:
-        fields = (
-            'username', 'confirmation_code',
-        )
-        model = User
-
-
-class UsersSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = (
-            'username', 'bio', 'email', 'role', 'first_name', 'last_name',
-        )
-        model = User
-
-    def validate_role(self, value):
-        user = self.context['request'].user
-        if user.role == 'user' and value == 'admin':
-            value = 'user'
-        return value
-
-
-class UserMeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = (
-            'username',
-            'email',
-            'first_name',
-            'last_name',
-            'bio',
-            'role',
-        )
-        read_only_fields = (
-            'role',
-            'username',
-            'email',
-        )
 
 
 class ConfirmationCodeSerializer(serializers.ModelSerializer):
@@ -91,6 +36,20 @@ class JWTTokenSerializer(serializers.ModelSerializer):
             'username', 'confirmation_code',
         )
         model = User
+
+
+class UsersSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'username', 'bio', 'email', 'role', 'first_name', 'last_name',
+        )
+        model = User
+
+    def validate_role(self, value):
+        user = self.context['request'].user
+        if user.role == 'user' and value == 'admin':
+            value = 'user'
+        return value
 
 
 class CategorySerializer(serializers.ModelSerializer):
