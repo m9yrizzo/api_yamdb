@@ -45,12 +45,6 @@ class UsersSerializer(serializers.ModelSerializer):
         )
         model = User
 
-#    def validate_role(self, value):
-#        user = self.context['request'].user
-#        if user.role == 'user' and value == 'admin':
-#            value = 'user'
-#        return value
-
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -74,6 +68,7 @@ class TitleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Title
         fields = '__all__'
+
 
 
 class TitleCreateSerializer(serializers.ModelSerializer):
