@@ -70,7 +70,6 @@ class TitleSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
 class TitleCreateSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(
         slug_field='slug',
