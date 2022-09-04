@@ -29,6 +29,8 @@ class Review(models.Model):
         Title, on_delete=models.CASCADE, related_name='reviews')
 
     class Meta:
+        verbose_name = 'Отзывы'
+        verbose_name_plural = 'Отзывы'
         ordering = ['pub_date']
         constraints = (
             models.UniqueConstraint(
@@ -53,6 +55,8 @@ class Comment(models.Model):
         db_index=True)
 
     class Meta:
+        verbose_name = 'Комменты'
+        verbose_name_plural = 'Комменты'
         ordering = ['pub_date']
 
     def __str__(self):

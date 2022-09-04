@@ -24,7 +24,7 @@ from .permissions import (IsAdmin, IsAdminOrReadOnly,
 from .serializers import (CategorySerializer, CommentSerializer,
                           ConfirmationCodeSerializer, GenreSerializer,
                           JWTTokenSerializer, ReviewSerializer,
-                          TitleCreateSerializer, TitleSerializer,
+                          TitleCreateSerializer, TitleReadOnlySerializer,
                           UsersSerializer)
 
 
@@ -55,7 +55,8 @@ def get_token(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     return Response(
-        {"token": str(RefreshToken.for_user(user).access_token)}
+        {"token": str(RefreshToken.for_user(user).access_token)},
+        status=status.HTTP_200_OK
     )
 
 
@@ -108,7 +109,11 @@ class CommentViewSet(viewsets.ModelViewSet):
     pagination_class = PageNumberPagination
 
     def get_queryset(self):
-        review = get_object_or_404(Review, pk=self.kwargs.get('review_id'))
+        title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
+        review = get_object_or_404(
+            title.reviews.all(),
+            pk=self.kwargs.get('review_id')
+        )
         return review.comments.all()
 
     def perform_create(self, serializer):
@@ -155,6 +160,5 @@ class TitleViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.request.method in ['GET']:
-            return TitleSerializer
-        else:
-            return TitleCreateSerializer
+            return TitleReadOnlySerializer
+        return TitleCreateSerializer
